@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog Comisión 7</title>
+        <title>Blog Grupo 7</title>
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="{% url 'home' %}">Start Bootstrap</a>
+                <a class="navbar-brand" href="{% url 'home' %}">Blog Grupo 7</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -30,7 +30,8 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'nosotros' %}">Acerca de Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'noticias:listar' %}">Noticias</a></li>
-                        
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contacto' %}">Contacto</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -41,7 +42,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1 style="white-space: nowrap; display: inline-block;">Blog Comisión 7</h1>
+                            <h1 style="white-space: nowrap; display: inline-block;">Blog Grupo 7</h1>
                             <span class="subheading">Un blog hecho para el Informatorio</span>
                             <br><br><br><br><br>
                         </div>
@@ -54,17 +55,19 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h4 class="ultimas-noticias"><a href="{% url 'home' %}">Últimas Noticias</h4></a>
                     {% block contenido %}
                         {% for noticia in noticias %}
                             <!-- Post preview-->
                             <div class="post-preview">
-                                <a href="{% url 'detalle_noticia' noticia.id %}">
-                                    <h2 class="post-title">{{ noticia.titulo }}</h2>
-                                    <h3 class="post-subtitle">{{ noticia.subtitulo }}</h3>
+                                
+                                <h2 class="post-title"><a href="{% url 'noticias:detalle' noticia.pk %}">{{ noticia.titulo }}</h2>
                                 </a>
+                                    
+                                
                                 <p class="post-meta">
                                     Publicado por
-                                    <a href="#!">{{ noticia.autor }}</a>
+                                    
                                     el {{ noticia.fecha_publicacion }}
                                 </p>
                             </div>
@@ -74,7 +77,7 @@
                     {% endblock contenido %}
 
                     <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="{% url 'noticias:listar' %}">Older Posts →</a></div>
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="{% url 'noticias:listar' %}">Todas las noticias →</a></div>
                 </div>
             </div>
         </div>

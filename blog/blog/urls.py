@@ -19,10 +19,13 @@ from django.urls import path, include
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('', views.Home, name='home'),
+     path('', views.ListarNoticiasHome, name='home'),
      path('nosotros/', views.Nosotros, name='nosotros'),
      path('noticias/', include('app.noticias.urls')),
+     path('contacto/', views.Contacto, name='contacto'),
+     
    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

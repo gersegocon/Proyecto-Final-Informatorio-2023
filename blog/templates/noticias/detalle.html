@@ -1,0 +1,19 @@
+{% extends 'noticias/listar.html' %}
+{% load static %}
+
+{% block contenido %}
+    <h2>Mi noticia detallada</h2>
+    
+    <img src="{{noticias.imagenes.url}}" width="40%">
+    <p>{{noticias.titulo}}</p>
+    <p>{{noticias.contenido}}</p>
+    <p>{{noticias.fecha_publicacion}}</p>
+    <p>{{noticias.categoria_noticia}}</p>
+    <br>
+    <a href="{% url 'home' %}">VOLVER AL INICIO</a>
+    <div class="d-flex justify-content-center mb-4"><a class="btn btn-primary text-uppercase" href="{% url 'noticias:listar' %}">Todas las noticias</a></div>
+
+    
+    
+
+{% endblock contenido %}
