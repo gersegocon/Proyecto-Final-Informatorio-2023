@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 /*!
 * Start Bootstrap - Clean Blog v6.0.9 (https://startbootstrap.com/theme/clean-blog)
@@ -6871,6 +6872,7 @@ textarea.form-control-lg {
 
 .border-top {
   border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  
 }
 
 .border-top-0 {
@@ -10673,6 +10675,21 @@ blockquote {
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
+    
+}
+
+footer.border-top {
+  background-repeat: no-repeat;
+  background-size:auto;
+  background-position: center 0;
+  
+}
+
+footer.border-top-noticias {
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center 0;
+  
 }
 
 header.masthead {
@@ -10817,3 +10834,5 @@ header.masthead .post-heading .meta a {
   color: #0085A1;
   
 }
+
+
