@@ -10775,14 +10775,14 @@ header.masthead .post-heading .meta {
   font-style: italic;
   font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-header.masthead .post-heading .meta a {
-  color: #fff;
-}
+
 @media (min-width: 992px) {
   header.masthead {
     padding-top: 12.5rem;
     padding-bottom: 12.5rem;
   }
+
+  
   header.masthead .page-heading h1, header.masthead .page-heading .h1,
   header.masthead .site-heading h1,
   header.masthead .site-heading .h1 {
@@ -10794,6 +10794,12 @@ header.masthead .post-heading .meta a {
   header.masthead .post-heading .subheading {
     font-size: 1.875rem;
   }
+}
+p.post-meta-detalle {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10;
+  color: white;
 }
 
 .section-heading {
@@ -10848,6 +10854,7 @@ p.post-meta-listar {
   margin-top: 0;
   color: #6c757d;
 }
+
 
 
 .ultimas-viajes >a  {
