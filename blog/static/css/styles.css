@@ -7750,6 +7750,15 @@ textarea.form-control-lg {
 
 .text-uppercase {
   text-transform: uppercase !important;
+  border-color:white;
+  margin-inline: center;
+}
+
+.volver {
+  background-color: black;
+}
+.boton-noticias {
+  background-color: red;
 }
 
 .text-capitalize {

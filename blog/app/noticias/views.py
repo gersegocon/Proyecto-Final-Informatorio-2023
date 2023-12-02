@@ -37,9 +37,14 @@ def ListarNoticias(request):
 def DetalleNoticias(request, pk):
     contexto = {}
 
-    n = Noticia.objects.get(pk = pk)
-    
+    n = Noticia.objects.get(pk=pk)
+
+    # Obtener la noticia anterior y la siguiente
+    noticia_anterior = Noticia.objects.filter(fecha_publicacion__lt=n.fecha_publicacion).order_by('-fecha_publicacion').first()
+    siguiente_noticia = Noticia.objects.filter(fecha_publicacion__gt=n.fecha_publicacion).order_by('fecha_publicacion').first()
+
     contexto['noticias'] = n
+    contexto['noticia_anterior'] = noticia_anterior
+    contexto['siguiente_noticia'] = siguiente_noticia
 
     return render(request, 'noticias/detalle.html', contexto)
-

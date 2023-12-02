@@ -10,10 +10,27 @@
     <p>{{noticias.fecha_publicacion}}</p>
     <p>{{noticias.categoria_noticia}}</p>
     <br>
-    <a href="{% url 'home' %}">VOLVER AL INICIO</a>
-    <div class="d-flex justify-content-center mb-4"><a class="btn btn-primary text-uppercase" href="{% url 'noticias:listar' %}">Todas las noticias</a></div>
+        
+    <div class="d-flex justify-content-center mt-4">
+        {% if noticia_anterior %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px;" href="{% url 'noticias:detalle' noticia_anterior.pk %}">⟸ Noticia Anterior</a>
+        {% else %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px; visibility: hidden;">⟸ Noticia Anterior</a>
+        {% endif %}
+        
+        <a class="btn btn-primary text-uppercase" style="width: 200px;" href="{% url 'noticias:listar' %}">Todas las noticias</a>
 
-    
-    
+        {% if siguiente_noticia %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px;" href="{% url 'noticias:detalle' siguiente_noticia.pk %}">Siguiente Noticia ⟹</a>
+        {% else %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px; visibility: hidden;">Siguiente Noticia ⟹</a>
+        {% endif %}
+                
+    </div>
 
+    <div class="d-flex justify-content-center mt-4">
+        <a class="btn btn-primary text-uppercase volver" href="{% url 'home' %}">
+            <i class="fas fa-home"></i> Volver al inicio
+        </a>
+    </div>
 {% endblock contenido %}
