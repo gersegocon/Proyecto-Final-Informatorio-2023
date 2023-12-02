@@ -1,0 +1,36 @@
+{% extends 'viajes/listar.html' %}
+{% load static %}
+
+{% block contenido %}
+    <h2>Mi viaje detallado</h2>
+    
+    <img src="{{viajes.imagenes.url}}" width="40%">
+    <p>{{viajes.titulo}}</p>
+    <p>{{viajes.contenido}}</p>
+    <p>{{viajes.fecha_publicacion}}</p>
+    <p>{{viajes.categoria_viaje}}</p>
+    <br>
+        
+    <div class="d-flex justify-content-center mt-4">
+        {% if viaje_anterior %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px;" href="{% url 'viajes:detalle' viaje_anterior.pk %}">⟸ viaje Anterior</a>
+        {% else %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px; visibility: hidden;">⟸ viaje Anterior</a>
+        {% endif %}
+        
+        <a class="btn btn-primary text-uppercase" style="width: 200px;" href="{% url 'viajes:listar' %}">Todos los viajes</a>
+
+        {% if siguiente_viaje %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px;" href="{% url 'viajes:detalle' siguiente_viaje.pk %}">Siguiente viaje ⟹</a>
+        {% else %}
+            <a class="btn btn-primary text-uppercase" style="width: 200px; visibility: hidden;">Siguiente viaje ⟹</a>
+        {% endif %}
+                
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+        <a class="btn btn-primary text-uppercase volver" href="{% url 'home' %}">
+            <i class="fas fa-home"></i> Volver al inicio
+        </a>
+    </div>
+{% endblock contenido %}

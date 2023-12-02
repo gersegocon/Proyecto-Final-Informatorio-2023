@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('noticias', '0001_initial'),
+        ('viajes', '0001_initial'),
     ]
 
     operations = [
@@ -19,8 +19,8 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.AddField(
-            model_name='noticia',
-            name='categoria_noticia',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='noticias.categoria'),
+            model_name='viaje',
+            name='categoria_viaje',
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='viajes.categoria'),
         ),
     ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app.noticias.models import Noticia
+from app.viajes.models import viaje
 def Home(request):
     return render(request, 'home.html')
 
@@ -9,12 +9,12 @@ def Nosotros(request):
 def Contacto(request):
     return render(request, 'contacto.html')
 
-def ListarNoticiasHome(request):
+def ListarviajesHome(request):
     contexto = {}
 
-    n = Noticia.objects.all().order_by('-fecha_publicacion')
+    n = viaje.objects.all().order_by('-fecha_publicacion')
     
-    contexto['noticias'] = n[0:2]
+    contexto['viajes'] = n[0:2]
 
     return render(request, 'home.html', contexto)
 

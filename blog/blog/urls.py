@@ -22,9 +22,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('', views.ListarNoticiasHome, name='home'),
+     path('', views.ListarviajesHome, name='home'),
      path('nosotros/', views.Nosotros, name='nosotros'),
-     path('noticias/', include('app.noticias.urls')),
+     path('viajes/', include('app.viajes.urls')),
      path('contacto/', views.Contacto, name='contacto'),
      
    

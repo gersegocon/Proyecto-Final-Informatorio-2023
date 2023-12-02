@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog - Noticias</title>
+        <title>Blog - viajes</title>
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'nosotros' %}">Acerca de nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'noticias:listar' %}">Noticias</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'viajes:listar' %}">viajes</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contacto' %}">Contacto</a></li>
 
                     </ul>
@@ -42,13 +42,9 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>Man must explore, and this is exploration at its greatest</h1>
-                            <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                            <span class="meta">
-                                Posted by
-                                <a href="#!">Start Bootstrap</a>
-                                on August 24, 2023
-                            </span>
+                            <h1>Descubrí los mejores destinos para viajar</h1>
+                            <span class="subheading">Todas las anecdotas y datos de los destinos visitados por todos los viajeros de Argentina.</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -66,7 +62,7 @@
                                     Filtrar por:
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="filtroDropdown">
-                                    <a class="dropdown-item" href="{% url 'noticias:listar' %}">TODAS</a>
+                                    <a class="dropdown-item" href="{% url 'viajes:listar' %}">TODAS</a>
                                     {% for cat in categorias %}
                                         <a class="dropdown-item" href="?id={{cat.pk}}">{{cat.nombre}}</a>
                                     {% endfor %}
@@ -79,26 +75,36 @@
                                 </div>
                             </div>
                         </div>
-                            {% for noticia in noticias %}
-                                <!-- Post preview-->
-                                <div class="post-preview">
-                                    
-                                        <h2 class="post-title"><a href="{% url 'noticias:detalle' noticia.pk %}">{{ noticia.titulo }}</h2></a>
-                                    <p class="post-meta">
+                            {% for viaje in viajes %}
+                            <!-- Post preview-->
+                            <div class="post-preview">
+                                <div class="row">
+                                    {% if viaje.imagenes %}
+                                        <div class="col-md-4">
+                                            <img src="{{ viaje.imagenes.url }}" alt="{{ viaje.titulo }}" class="img-fluid">
+                                        </div>
+                                        <div class="col-md-8">
+                                    {% else %}
+                                        <div class="col-md-12">
+                                    {% endif %}
+                                <h2 class="post-title"><a href="{% url 'viajes:detalle' viaje.pk %}">{{ viaje.titulo }}</a></h2>
+                                <p class="post-meta-listar">
                                         Publicado por
-                                        
-                                        el {{ noticia.fecha_publicacion }}
+                                        el {{ viaje.fecha_publicacion }}
                                     </p>
+                                        
                                 </div>
-                                <!-- Divider-->
-                                <hr class="my-4" />
-                            {% endfor %}
+                            </div>
+                            <!-- Divider-->
+                            <hr class="my-4" />
+                        {% endfor %}
+                    
                         {% endblock contenido %}
 
                         
 
         <!-- Footer-->
-        <footer class="border-top-noticias" style="background-image: url('{% static 'assets/img/informatorio-logo.png' %}')">
+        <footer class="border-top-viajes" style="background-image: url('{% static 'assets/img/informatorio-logo.png' %}')">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">

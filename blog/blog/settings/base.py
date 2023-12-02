@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Mis aplicaciones
     'app.usuarios',
-    'app.noticias',
+    'app.viajes',
 ]
 
 MIDDLEWARE = [

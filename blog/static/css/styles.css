@@ -1118,8 +1118,9 @@ progress {
     width: 25%;
   }
   .col-md-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
+    flex:0 0 auto;
+    
+    width: 20%;
   }
   .col-md-5 {
     flex: 0 0 auto;
@@ -7757,7 +7758,7 @@ textarea.form-control-lg {
 .volver {
   background-color: black;
 }
-.boton-noticias {
+.boton-viajes {
   background-color: red;
 }
 
@@ -10700,7 +10701,7 @@ footer.border-top {
   
 }
 
-footer.border-top-noticias {
+footer.border-top-viajes {
   background-repeat: no-repeat;
   background-size:contain;
   background-position: center 0;
@@ -10717,6 +10718,8 @@ header.masthead {
   background-size: cover;
   background-attachment: scroll;
 }
+
+
 header.masthead:before {
   content: "";
   position: absolute;
@@ -10760,8 +10763,10 @@ header.masthead .post-heading .subheading {
 }
 header.masthead .post-heading .subheading {
   font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0.75rem 0 2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.625rem;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header.masthead .post-heading .meta {
@@ -10837,14 +10842,22 @@ header.masthead .post-heading .meta a {
   }
 }
 
-.ultimas-noticias >a  {
+p.post-meta-listar {
+  font-size: 1.125rem;
+  font-style: italic;
+  margin-top: 0;
+  color: #6c757d;
+}
+
+
+.ultimas-viajes >a  {
   color:#212529;
   border-color: #0085A1;
   font-style: italic;
   text-decoration:underline;
   
 }
-.ultimas-noticias > a:focus, .ultimas-noticias > a:hover {
+.ultimas-viajes > a:focus, .ultimas-viajes > a:hover {
   text-decoration: underline;
   color: #0085A1;
   

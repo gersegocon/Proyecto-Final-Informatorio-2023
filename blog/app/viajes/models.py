@@ -8,12 +8,12 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
     
-class Noticia(models.Model):
+class viaje(models.Model):
     titulo = models.CharField('Titulo', max_length=50)
-    fecha_publicacion = models.DateField('Data', auto_now_add=True)
+    fecha_publicacion = models.DateTimeField('Data', auto_now_add=True)
     contenido = models.TextField('Texto')
-    imagenes = models.ImageField(upload_to='noticias')
-    categoria_noticia = models.ForeignKey(Categoria, on_delete= models.SET_NULL, null=True)
+    imagenes = models.ImageField(upload_to='viajes')
+    categoria_viaje = models.ForeignKey(Categoria, on_delete= models.SET_NULL, null=True)
 
     
     def __str__(self):
