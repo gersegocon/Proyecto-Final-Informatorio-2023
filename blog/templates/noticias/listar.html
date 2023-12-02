@@ -60,6 +60,25 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         {% block contenido %}
+                        <div class="submenu">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="filtroDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Filtros
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="filtroDropdown">
+                                    <a class="dropdown-item" href="{% url 'noticias:listar' %}">TODAS</a>
+                                    {% for cat in categorias %}
+                                        <a class="dropdown-item" href="?id={{cat.pk}}">{{cat.nombre}}</a>
+                                    {% endfor %}
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="?antiguedad_asc=1">Mas antiguas primero</a>
+                                    <a class="dropdown-item" href="?antiguedad_des=1">Mas recientes primero</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="?orden_asc=1">A-Z</a>
+                                    <a class="dropdown-item" href="?orden_des=1">Z-A</a>
+                                </div>
+                            </div>
+                        </div>
                             {% for noticia in noticias %}
                                 <!-- Post preview-->
                                 <div class="post-preview">
