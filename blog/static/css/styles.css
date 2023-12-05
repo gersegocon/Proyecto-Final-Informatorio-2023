@@ -10729,6 +10729,7 @@ header.masthead {
 }
 
 
+
 header.masthead:before {
   content: "";
   position: absolute;
@@ -10879,3 +10880,51 @@ p.post-meta-listar {
   
 }
 
+.post-heading .fondo-cuadrado {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px; /* Borde del cuadro */
+  padding: 0 35px 0 15px; /* Espaciado interno del cuadro */
+  margin-left:100%;
+  margin-top: 10%;
+  width:fit-content;
+  background-color: rgba(0, 0, 0, 0.4); /* Color de fondo del cuadro */
+}
+
+body > header > div > div > div > div > div > p.categoria-viajes {
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-decoration: underline;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+body > header > div > div > div > div > div > p.categoria-viajes1 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  margin-left: 20%;
+  font-style: italic;
+  
+}
+
+body > div > div > div > div.detalles-viaje {
+  display:inline;
+  
+  
+}
+
+body > div > div > div > div.detalles-viaje > p {
+  font-size: 15px;
+  text-align: justify;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+body > div > div > div > div.detalles-viaje > img {
+  margin-left:110%;
+  margin-top:-116%;  
+  height:50%;
+  width: 50%;
+  
+
+}
