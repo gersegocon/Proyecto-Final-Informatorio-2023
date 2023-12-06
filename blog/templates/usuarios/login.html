@@ -2,10 +2,10 @@
 {% load static %}
 {% block titulo %}LOGIN{% endblock titulo %}
 {% block contenido %}
-    <form method="post"> {%csrf_token %}
+    <form method="post"> {% csrf_token %}
         {% if messages %}
             {% for m in messages %}
-                <div>{{message}}</div>
+            <div class="alert alert-danger">{{ m }}</div>
             {%endfor%}
         {%endif%}
     <input type="text" name="username" placeholder="Nombre de usuario">

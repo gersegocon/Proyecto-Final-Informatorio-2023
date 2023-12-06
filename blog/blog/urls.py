@@ -22,10 +22,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('', views.ListarViajesHome, name='home'),
-     path('nosotros/', views.Nosotros, name='nosotros'),
-     path('viajes/', include('app.viajes.urls')),
-     path('contacto/', views.Contacto, name='contacto'),
-     path('usuarios/', include('app.usuarios.urls')),
+    path('', views.ListarViajesHome, name='home'),
+    path('nosotros/', views.Nosotros, name='nosotros'),
+    path('viajes/', include('app.viajes.urls')),
+    path('contacto/', views.Contacto, name='contacto'),
+    path('usuarios/', include('app.usuarios.urls')),
    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

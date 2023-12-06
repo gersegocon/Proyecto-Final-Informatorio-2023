@@ -8,7 +8,7 @@
 <h1>Registarse</h1>
 <div><b>Para usar la plataforma debe Registrarse</b> </div>
 </div>
-<form method="post">{%csrf_token%}
+<form method="post">{% csrf_token %}
 {{form.errors}}
 <div class="formulario-registro">
     <label for="Nombre">Nombre</label>

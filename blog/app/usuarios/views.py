@@ -8,6 +8,10 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 
+
+def Perfil(request):
+    return render(request, 'usuarios/perfil.html')
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -19,7 +23,7 @@ def user_login(request):
             login(request, user)
             return redirect('home') #redireccion a la pag de home post login
         else:
-            messages.error(request, 'usuario o contraseña invalido, intente de nuevo')
+            messages.error(request, 'Usuario o contraseña invalido, intente de nuevo.')
     
     return render(request, 'usuarios/login.html')
 
@@ -31,5 +35,5 @@ def user_logout(request):
 class Registro(CreateView):
     # formulario de django
     form_class = RegistroForm
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('usuarios:login')
     template_name = 'usuarios/registro.html'

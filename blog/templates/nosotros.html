@@ -31,7 +31,25 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'nosotros' %}">Acerca de Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'viajes:listar' %}">viajes</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contacto' %}">Contacto</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Hola {{ user.username }} ▼
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!-- Contenido del menú desplegable -->
+                                <a class="dropdown-item" href="{% url 'usuarios:perfil' %}">Mi perfil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Destinos guardados</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'usuarios:logout' %}">Cerrar sesión</a>
+                            </div>
+                        </li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'usuarios:login' %}">LOGIN</a></li>
+                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'usuarios:registro' %}">REGISTRO</a></li>
                         
+                        {% endif %}
                     </ul>
                 </div>
             </div>
