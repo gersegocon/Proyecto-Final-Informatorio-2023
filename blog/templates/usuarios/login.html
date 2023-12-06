@@ -1,7 +1,11 @@
 {% extends 'home.html' %}
 {% load static %}
-{% block titulo %}LOGIN{% endblock titulo %}
+{% block title %}
+    <title>Blog Grupo 5 - INICIAR SESIÓN</title>
+{% endblock title %}
+  
 {% block contenido %}
+{% block titulo %}LOGIN{% endblock titulo %}
     <form method="post"> {% csrf_token %}
         {% if messages %}
             {% for m in messages %}
