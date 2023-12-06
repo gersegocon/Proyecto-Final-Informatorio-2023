@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app.viajes.models import viaje
+from app.viajes.models import Viaje
 def Home(request):
     return render(request, 'home.html')
 
@@ -9,10 +9,10 @@ def Nosotros(request):
 def Contacto(request):
     return render(request, 'contacto.html')
 
-def ListarviajesHome(request):
+def ListarViajesHome(request):
     contexto = {}
 
-    n = viaje.objects.all().order_by('-fecha_publicacion')
+    n = Viaje.objects.all().order_by('-fecha_publicacion')
     
     contexto['viajes'] = n[0:2]
 

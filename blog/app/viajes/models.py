@@ -8,7 +8,7 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nombre
     
-class viaje(models.Model):
+class Viaje(models.Model):
     titulo = models.CharField('Titulo', max_length=50)
     fecha_publicacion = models.DateTimeField('Data', auto_now_add=True)
     contenido = models.TextField('Texto')

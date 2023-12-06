@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block titulo %}LOGIN{% endblock titulo %}
+{% block contenido %}
+    <form method="post"> {%csrf_token %}
+        {% if messages %}
+            {% for m in messages %}
+                <div>{{message}}</div>
+            {%endfor%}
+        {%endif%}
+    <input type="text" name="username" placeholder="Nombre de usuario">
+    <input type="password" name="password" placeholder="Contraseña">
+    <button type="submit">Login</button>
+
+    </form>
+{% endblock contenido %}
