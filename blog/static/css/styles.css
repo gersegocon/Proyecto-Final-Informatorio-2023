@@ -10742,11 +10742,11 @@ header.masthead:before {
 }
 header.masthead .page-heading,
 header.masthead .post-heading,
-header.masthead .site-heading {
+header.masthead .site-heading, body.body-login .site-heading {
   color: #fff;
 }
 header.masthead .page-heading,
-header.masthead .site-heading {
+header.masthead .site-heading, body.body-login .site-heading {
   text-align: center;
 }
 header.masthead .page-heading h1, header.masthead .page-heading .h1,
@@ -10755,8 +10755,9 @@ header.masthead .site-heading .h1 {
   font-size: 3rem;
 }
 header.masthead .page-heading .subheading,
-header.masthead .site-heading .subheading {
+header.masthead .site-heading .subheading, body.body-login .site-heading .subheading {
   font-size: 1.5rem;
+  color:white;
   font-weight: 300;
   line-height: 1.1;
   display: block;
@@ -10928,26 +10929,60 @@ body > div > div > div > div.detalles-viaje > img {
   
 }
 
-body > header > div > div > div > div > form > div {
-display:inline-block;
-
-}
-
-body > header > div > div > div > div > form > div > div {
-  display:flex;
-  flex-direction: column; 
-  align-items: center;
-  width: fit-content;
-}
-
-body > header > div > div > div > div > form > div > div > input[type=text]:nth-child(1), body > header > div > div > div > div > form > div > div > input[type=password]:nth-child(3) {
-  padding: 5px 0 5px 5px;
-  font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-}
-
 #submitButton {
   border-color: #0085A1;
   margin-bottom: 100%;
 }
 
+.body-login {
+  
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  
+  background: no-repeat center center;
+  
+  background-size: cover;
+  background-attachment: scroll;
+  text-align: center;
+
+  
+}
+
+body > div > div > div > div > div > form > div {
+  display:inline-block;
+  
+  }
+  
+  body > div > div > div > div > div > form > div > div {
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+    width: fit-content;
+  }
+  
+  body > div > div > div > div > div > form > div > div > input[type=text]:nth-child(1), body > div > div > div > div > div > form > div > div > input[type=password]:nth-child(3) {
+    padding: 5px 0 5px 5px;
+    font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  }
+
+  body.body-login .container-fluid .site-heading .subheading {
+    font-size: 1.5rem;
+    color:white;
+    font-weight: 600;
+    line-height: 1.1;
+    display: block;
+    margin-top: 0.625rem;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  body > footer.footer-login {
+    padding: 0;
+    
+  }
+
+ .footer-login > div > div > div > div {
+    color:white;
+    font-weight: 600;
+  }
