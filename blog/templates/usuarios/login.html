@@ -3,18 +3,84 @@
 {% block title %}
     <title>Blog Grupo 5 - INICIAR SESIÓN</title>
 {% endblock title %}
-  
-{% block contenido %}
-{% block titulo %}LOGIN{% endblock titulo %}
-    <form method="post"> {% csrf_token %}
-        {% if messages %}
-            {% for m in messages %}
-            <div class="alert alert-danger">{{ m }}</div>
-            {%endfor%}
-        {%endif%}
-    <input type="text" name="username" placeholder="Nombre de usuario">
-    <input type="password" name="password" placeholder="Contraseña">
-    <button type="submit">Login</button>
 
-    </form>
+
+
+{% block contenido %}
+
+               
+
+    <header class="masthead" style="background-image: url('{% static 'assets/img/inicio-sesion.png' %}'); background-size">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1 style="white-space: nowrap; display: inline-block;">¡Logueate!</h1>
+                        <span class="subheading">Inicia sesión para continuar</span>
+                        <br><br>
+                        <form method="post"> {% csrf_token %}
+                            {% if messages %}
+                                {% for m in messages %}
+                                <div class="alert alert-danger">{{ m }}</div>
+                                {%endfor%}
+                            {%endif%}
+                            <div class="caja-login">
+                                <div class="formulario-login">
+                                    <input type="text" name="username" placeholder="Nombre de usuario">
+                                    <br>
+                                    <input type="password" name="password" placeholder="Contraseña">
+                                    <br>
+                                    <button class="btn btn-primary text-uppercase disabled1" id="submitButton" type="submit">Login</button>
+                                    
+                                </div>
+                            </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Footer-->
+        
+    <footer1>
+        
+        <div>
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://linktr.ee/grupo5_ig" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://linktr.ee/grupo5_linkedin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://linktr.ee/grupo5_github" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic">Derechos de autor &copy; Grupo 5 - Comisión 6 - 2023</div>
+                </div>
+            </div>
+        </div>
+    </footer1>
+    </header>
+    
+        
+    
 {% endblock contenido %}
+{% block footer %}
+        
+{% endblock footer %}
+

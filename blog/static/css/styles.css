@@ -10926,5 +10926,28 @@ body > div > div > div > div.detalles-viaje > img {
   height:50%;
   width: 50%;
   
+}
+
+body > header > div > div > div > div > form > div {
+display:inline-block;
 
 }
+
+body > header > div > div > div > div > form > div > div {
+  display:flex;
+  flex-direction: column; 
+  align-items: center;
+  width: fit-content;
+}
+
+body > header > div > div > div > div > form > div > div > input[type=text]:nth-child(1), body > header > div > div > div > div > form > div > div > input[type=password]:nth-child(3) {
+  padding: 5px 0 5px 5px;
+  font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+
+#submitButton {
+  border-color: #0085A1;
+  margin-bottom: 100%;
+}
+
