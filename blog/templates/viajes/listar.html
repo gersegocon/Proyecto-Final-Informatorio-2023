@@ -21,7 +21,9 @@
         <!-- Post Content-->
         
         <div class="container px-4 px-lg-5">
-            
+            {% if user.is_authenticated %}
+            <a href="{% url 'viajes:addViaje' %}">Crear</a>
+            {% endif %}
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         
@@ -58,8 +60,8 @@
                                     {% endif %}
                                 <h2 class="post-title"><a href="{% url 'viajes:detalle' viaje.pk %}">{{ viaje.titulo }}</a></h2>
                                 <p class="post-meta-listar">
-                                        Publicado por
-                                        el {{ viaje.fecha_publicacion }}
+                                    Publicado por <a href="{% url 'usuarios:perfil' %}">{{viaje.autor}}</a>
+                                    el {{ viaje.fecha_publicacion }}
                                 </p>
                                         
                                 </div>

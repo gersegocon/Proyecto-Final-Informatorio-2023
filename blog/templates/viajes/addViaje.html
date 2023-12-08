@@ -1,0 +1,11 @@
+{% extends 'usuarios/registro.html' %}
+{% load static %}
+{% block titulo %}Crear Publicación{% endblock titulo %}
+{% block contenido %}
+    <h2>Crea una publicación</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock contenido %}

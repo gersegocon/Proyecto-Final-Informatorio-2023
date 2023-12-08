@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Viaje, Categoria
+from django.urls import reverse
+from .forms import ViajeForm
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def ListarViajes(request):
     contexto = {}
@@ -39,6 +43,10 @@ def DetalleViajes(request, pk):
 
     n = Viaje.objects.get(pk=pk)
 
+    #BORRAR VIAJE
+    if request.method == 'POST' and 'delete_viaje' in request.POST:
+        n.delete()
+        return redirect('viajes:listar')
     # Obtener el viaje anterior y eñ siguiente
     viaje_anterior = Viaje.objects.filter(fecha_publicacion__lt=n.fecha_publicacion).order_by('-fecha_publicacion').first()
     siguiente_viaje = Viaje.objects.filter(fecha_publicacion__gt=n.fecha_publicacion).order_by('fecha_publicacion').first()
@@ -48,3 +56,18 @@ def DetalleViajes(request, pk):
     contexto['siguiente_viaje'] = siguiente_viaje
 
     return render(request, 'viajes/detalle.html', contexto)
+    
+@login_required
+def AddViaje(request):
+    if request.method == 'POST':
+        form = ViajeForm(request.POST or None, request.FILES) ##Request files es para las imagenes
+
+        if form.is_valid():
+            viaje = form.save(commit=False)
+            viaje.autor = request.user
+            form.save()
+            return redirect('home')
+    else:
+        form = ViajeForm()
+
+    return render (request, 'viajes/addViaje.html', {'form':form})

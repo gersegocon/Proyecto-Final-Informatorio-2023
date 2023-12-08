@@ -12,6 +12,9 @@ from django.urls import reverse_lazy
 def Perfil(request):
     return render(request, 'usuarios/perfil.html')
 
+def MiPerfil(request):
+    return render(request, 'usuarios/mi-perfil.html')
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')

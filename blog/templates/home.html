@@ -45,7 +45,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <!-- Contenido del menú desplegable -->
-                            <a class="dropdown-item" href="{% url 'usuarios:perfil' %}">Mi perfil</a>
+                            <a class="dropdown-item" href="{% url 'usuarios:mi-perfil' %}">Mi perfil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Destinos guardados</a>
                             <div class="dropdown-divider"></div>
@@ -96,8 +96,7 @@
                                     
                                 
                                 <p class="post-meta">
-                                    Publicado por
-                                    
+                                    Publicado por <a href="{% url 'usuarios:perfil' %}">{{viaje.autor}}</a>
                                     el {{ viaje.fecha_publicacion }}
                                 </p>
                             </div>

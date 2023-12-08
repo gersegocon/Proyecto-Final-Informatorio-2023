@@ -11011,3 +11011,45 @@ body > div > div > div > div > div > form > div {
   #label-nombre, #label-apellido, #label-username, #label-email, #label-contraseña, #label-recontraseña {
     margin-right: 10px;
   }
+
+  .boton-borrar {
+    color:black;
+    background-color:transparent;
+    border-color: transparent;
+    padding: 0;
+  }
+  
+  .boton-borrar:hover {
+    background-color: red;
+    color:white;
+    border-color:transparent;
+    
+  }
+  
+  body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form {
+    text-align: center;
+    
+  }
+
+  body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form:hover {
+    background-color: red;
+  }
+
+  body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show {
+    padding:0;
+  }
+
+  .dropdown-divider1 {
+  height: 0;
+  
+  overflow: hidden;
+  border-top: 1px solid var(--bs-dropdown-divider-bg);
+  opacity: 1;
+    padding:0;
+  }
+  
+
+  
+
+  
+  
