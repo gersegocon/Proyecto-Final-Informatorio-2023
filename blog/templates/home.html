@@ -23,7 +23,9 @@
 </head>
 <body> 
     <!-- Navigation-->
+    {% block barra %}
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    {% endblock barra %}
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="{% url 'home' %}">Blog Grupo 5</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

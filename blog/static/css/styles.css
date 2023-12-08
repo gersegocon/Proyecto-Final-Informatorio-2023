@@ -10744,10 +10744,17 @@ header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading, body.body-login .site-heading {
   color: #fff;
+  
 }
 header.masthead .page-heading,
 header.masthead .site-heading, body.body-login .site-heading {
   text-align: center;
+}
+
+body.body-login .site-heading {
+  width:auto; 
+  border-radius: 50px;
+  
 }
 header.masthead .page-heading h1, header.masthead .page-heading .h1,
 header.masthead .site-heading h1,
@@ -10931,7 +10938,7 @@ body > div > div > div > div.detalles-viaje > img {
 
 #submitButton {
   border-color: #0085A1;
-  margin-bottom: 100%;
+  margin-bottom: 20%;
 }
 
 .body-login {
@@ -10979,10 +10986,28 @@ body > div > div > div > div > div > form > div {
 
   body > footer.footer-login {
     padding: 0;
-    
+    align-items:;
   }
 
  .footer-login > div > div > div > div {
     color:white;
     font-weight: 600;
+  }
+
+  .formulario-registro {
+    align-items: end ;
+  }
+
+  .nombre, .apellido, .username, .email, .contraseña, .recontraseña {
+    padding: 5px 50px 5px 0px;
+    font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+    #caja-nombre, #caja-apellido, #caja-username, #caja-email, #caja-contraseña, #caja-recontraseña {
+    padding: 5px 0 5px 5px;
+    font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  #label-nombre, #label-apellido, #label-username, #label-email, #label-contraseña, #label-recontraseña {
+    margin-right: 10px;
   }
