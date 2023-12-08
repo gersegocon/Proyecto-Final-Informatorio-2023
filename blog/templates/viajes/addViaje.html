@@ -1,11 +1,14 @@
 {% extends 'usuarios/registro.html' %}
 {% load static %}
-{% block titulo %}Crear Publicación{% endblock titulo %}
-{% block contenido %}
+{% block title %}
+    <title>Blog Grupo 5 - {{user.username}}: Crear publicación</title>
+{% endblock title %}  
+
+{% block login %}
     <h2>Crea una publicación</h2>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
-{% endblock contenido %}
+{% endblock login %}
