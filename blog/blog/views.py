@@ -9,7 +9,7 @@ def Nosotros(request):
 def Contacto(request):
     return render(request, 'contacto.html')
 
-def ListarViajesHome(request):
+def ListarViajesHome(request): #para que aparezcan noticias en pagina de inicio
     contexto = {}
 
     n = Viaje.objects.all().order_by('-fecha_publicacion')

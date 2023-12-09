@@ -5,10 +5,14 @@
 {% endblock title %}  
 
 {% block login %}
-    <h2>Crea una publicación</h2>
+    <h1 style="white-space: nowrap; display: inline-block;">Crea una publicación</h1>
+    <span class="subheading">Contale a todos sobre tu viaje</span>
+    <br>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
+        <div class="formulario-crear">
+            {{ form.as_p }}
+        </div>
+        <button class="btn btn-primary text-uppercase" id="boton-guardar" type="submit">Guardar</button>
     </form>
 {% endblock login %}

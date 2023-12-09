@@ -11052,7 +11052,13 @@ body > div > div > div > div > div > form > div {
   color:green;
   border-color:transparent;
 }
-  
 
-  
-  
+.formulario-crear {
+  text-align:center;
+  font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#boton-guardar {
+  border-color: #0085A1;
+  margin: 5% 0 10% 0;
+}
