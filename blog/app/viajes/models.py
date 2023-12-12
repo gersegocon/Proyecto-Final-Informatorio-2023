@@ -15,7 +15,11 @@ class Viaje(models.Model):
     contenido = models.TextField('Texto')
     imagenes = models.ImageField(upload_to='viajes')
     categoria_viaje = models.ForeignKey(Categoria, on_delete= models.SET_NULL, null=True)
-    autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=Usuario.objects.get(is_superuser=True).pk)
+    
+    def default_autor():
+        return Usuario.objects.get(is_superuser=True).pk
+    
+    autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=default_autor)
     
     def __str__(self):
         return self.titulo
