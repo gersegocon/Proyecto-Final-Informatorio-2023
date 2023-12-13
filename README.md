@@ -1,6 +1,6 @@
 Pasos para correr proyecto:
-- En carpeta deseada: git clone https://github.com/gersegocon/Proyecto-Final-Informatorio-2023
-- Crear entorno virtual: python -m venv "EntornoVirtual"
+En carpeta deseada: _git clone https://github.com/gersegocon/Proyecto-Final-Informatorio-2023_
+*Crear entorno virtual: python -m venv "EntornoVirtual"*
 - Activar entorno virtual: Entrar a la carpeta del entorno, en este caso: EntornoVirtual\Scripts\activate
 - Con el entorno activado, ir a la carpeta del proyecto ...Proyecto-Final-Informatorio-2023\blog
 - Instalar los requisitos: pip install -r requeriments.txt
