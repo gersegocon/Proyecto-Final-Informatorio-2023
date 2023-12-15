@@ -11012,7 +11012,7 @@ body > div > div > div > div > div > form > div {
     margin-right: 10px;
   }
 
-  .boton-borrar {
+  .boton-borrar, .boton-editar {
     color:black;
     background-color:transparent;
     border-color: transparent;
@@ -11026,9 +11026,20 @@ body > div > div > div > div > div > form > div {
     
   }
   
-  body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form {
+  .boton-editar:hover {
+    background-color: green;
+    color:white;
+    border-color:transparent;
+    
+  }
+
+  body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form, .cuadro-boton-editar  {
     text-align: center;
     
+  }
+
+  .cuadro-boton-editar:hover {
+    background-color: green;
   }
 
   body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form:hover {
@@ -11061,4 +11072,11 @@ body > div > div > div > div > div > form > div {
 #boton-guardar {
   border-color: #0085A1;
   margin: 5% 0 10% 0;
+}
+
+.post-subtitulos {
+  font-size: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:#6c757d;
+  margin: 3% 0;  
 }

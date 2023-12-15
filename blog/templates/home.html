@@ -23,9 +23,7 @@
 </head>
 <body> 
     <!-- Navigation-->
-    {% block barra %}
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-    {% endblock barra %}
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="{% url 'home' %}">Blog Grupo 5</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,9 +38,11 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contacto' %}">Contacto</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
+                        {% block usuario-barra %}
                         <a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hola {{ user.username }} ▼
                         </a>
+                        {% endblock usuario-barra %}
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <!-- Contenido del menú desplegable -->
                             <a class="dropdown-item" href="{% url 'usuarios:mi-perfil' %}">Mi perfil</a>
@@ -93,8 +93,9 @@
                                 
                                 <h2 class="post-title"><a href="{% url 'viajes:detalle' viaje.pk %}">{{ viaje.titulo }}</h2>
                                 </a>
-                                    
-                                
+                                 
+                                <p class="post-subtitulos">{{ viaje.resumen }}</p>
+                                                                
                                 <p class="post-meta">
                                     Publicado por <a href="{% url 'usuarios:perfil' %}">{{viaje.autor}}</a>
                                     el {{ viaje.fecha_publicacion }}
