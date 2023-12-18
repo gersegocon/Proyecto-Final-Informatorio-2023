@@ -5,6 +5,7 @@ from .forms import ViajeForm
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from app.usuarios.models import Favorito
+from django.http import HttpResponseForbidden
 
 # Create your views here.  
 
@@ -105,3 +106,24 @@ def toggle_favorito(request, pk):
 def mis_favoritos(request):
     viajes_favoritos = Viaje.objects.filter(favorito__usuario=request.user)
     return render(request, 'viajes/mis_favoritos.html', {'viajes_favoritos': viajes_favoritos})
+
+
+##### HAY QUE REVISAR, SALE ERROR 403 FORBIDDEN 
+@login_required
+def EditarViajes(request, pk):
+    viaje = get_object_or_404(Viaje, pk=pk)
+
+    if request.method == 'POST':
+        form = ViajeForm(request.POST, request.FILES, instance = viaje)
+
+        if form.is_valid():
+            form.save()
+            return redirect('viajes:detalle', pk = pk)
+        else:
+            form = ViajeForm(instance=viaje)
+        
+    # solo el autor puede editar la noticia
+    if viaje.autor != request.user:
+        return  HttpResponseForbidden('No tenés permiso para editar esta noticia, sólo el autor puede hacerlo')
+    
+    return render(request, 'viajes/editar.html', {'form':form})
