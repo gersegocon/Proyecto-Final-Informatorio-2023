@@ -1,0 +1,18 @@
+{% extends 'usuarios/registro.html' %}
+{% load static %}
+{% block title %}
+    <title>{{user.username}}: Editar publicación</title>
+{% endblock title %}  
+
+{% block login %}
+    <h1 style="white-space: nowrap; display: inline-block;">Edita tu publicación</h1>
+    <span class="subheading">Hacé los cambios necesarios</span>
+    <br>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario-crear">
+            {{ form.as_p }}
+        </div>
+        <button class="btn btn-primary text-uppercase" id="boton-editar" type="submit">Guardar cambios</button>
+    </form>
+{% endblock login %}
