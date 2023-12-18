@@ -124,6 +124,8 @@ def EditarViajes(request, pk):
         
     # solo el autor puede editar la noticia
     if viaje.autor != request.user:
-        return  HttpResponseForbidden('No tenés permiso para editar esta noticia, sólo el autor puede hacerlo')
-    
+        return  redirect('viajes:editar_error')
     return render(request, 'viajes/editar.html', {'form':form})
+
+def editar_error(request):
+    return render(request, 'viajes/editar_error.html')

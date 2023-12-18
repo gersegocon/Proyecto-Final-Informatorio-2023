@@ -101,8 +101,10 @@
                                     <div class="dropdown-divider1"></div>
                                     <div class="cuadro-boton-editar">
                                         <form method="POST" action="{% url 'viajes:edit_viaje' pk=viajes.pk %}">
-                                        <button class="btn btn-primary text-uppercase boton-editar" name="editar_viaje">Editar</button>
-                                    </form>
+                                            {% csrf_token %}
+                                            <button class="btn btn-primary text-uppercase boton-editar" name="editar_viaje">Editar</button>
+                                        </form>
+                                    </div>
                                 </div>
                                                    
                         {% endif %}
@@ -133,7 +135,10 @@
                                 <i class="fas fa-home"></i> Volver al inicio
                             </a>
                         </div>
-    {% endblock contenido %}
+                    </div>
+                
+        </div>
+{% endblock contenido %}
                        
 
         
