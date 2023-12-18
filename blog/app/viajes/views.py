@@ -6,7 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from app.usuarios.models import Favorito
 
-# Create your views here.
+# Create your views here.  
+
+
 def ListarViajes(request):
     contexto = {}
     id_categoria = request.GET.get("id", None)
@@ -49,7 +51,7 @@ def DetalleViajes(request, pk):
     # Verifica si el viaje está en favoritos del usuario
     if request.user.is_authenticated:
         is_favorito = Favorito.objects.filter(usuario=request.user, viaje=viaje).exists()
-
+    
     # BORRAR VIAJE
     if request.method == 'POST' and 'delete_viaje' in request.POST:
         viaje.delete()
@@ -97,3 +99,9 @@ def toggle_favorito(request, pk):
         message = "Añadido a favoritos"
 
     return JsonResponse({'message': message, 'is_favorito': is_favorito})
+
+
+@login_required
+def mis_favoritos(request):
+    viajes_favoritos = Viaje.objects.filter(favorito__usuario=request.user)
+    return render(request, 'viajes/mis_favoritos.html', {'viajes_favoritos': viajes_favoritos})

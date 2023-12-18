@@ -9,4 +9,5 @@ urlpatterns = [
      path('detalle/<int:pk>', views.DetalleViajes, name='detalle'),
      path('addViaje', views.AddViaje, name='addViaje'),
      path('toggle_favorito/<int:pk>/', views.toggle_favorito, name='toggle_favorito'),
+     path('mis_favoritos', views.mis_favoritos, name='mis_favoritos'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
