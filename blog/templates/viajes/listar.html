@@ -2,7 +2,13 @@
 {% load static %}
 {% block title %}
     <title>Blog Grupo 5 - Viajes</title>
-{% endblock title %}  
+{% endblock title %}
+
+{% block usuario-barra %}
+<a class="nav-link px-lg-3 py-3 py-lg-4" style="text-shadow: 0 0 7px rgba(255, 255, 255, 1); ; color: black;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Hola {{ user.username }} ▼
+</a>
+{% endblock usuario-barra %}  
     {% block contenido %}
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('{% static 'assets/img/post-bg.jpg' %}')">
@@ -60,6 +66,7 @@
                                         <div class="col-md-12">
                                     {% endif %}
                                 <h2 class="post-title"><a href="{% url 'viajes:detalle' viaje.pk %}">{{ viaje.titulo }}</a></h2>
+                                <p class="post-subtitulos">{{ viaje.resumen }}</p>
                                 <p class="post-meta-listar">
                                     Publicado por <a href="{% url 'usuarios:perfil' %}">{{viaje.autor}}</a>
                                     el {{ viaje.fecha_publicacion }}

@@ -22,7 +22,61 @@
                                 Publicado por <a href="#">{{viajes.autor}}</a>
                                 el {{ viajes.fecha_publicacion }}
                             </p>
+                            <!-- para favs -->
+                            <button id="toggle-favorito" class="btn btn-primary text-uppercase">
+                                {% if is_favorito %}
+                                    Quitar de favoritos ★
+                                {% else %}
+                                    Añadir a favoritos ★
+                                {% endif %}
+                            </button>
                             
+
+                            <div id="mensaje-favorito" class="mt-2"></div>
+
+                            <script>
+                                function mostrarMensaje(mensaje) {
+                                    var mensajeElement = document.getElementById('mensaje-favorito');
+                                    mensajeElement.innerText = mensaje;
+                                    mensajeElement.style.display = 'block';
+
+                                    // Oculta el mensaje después de 3 segundos (3000 milisegundos)
+                                    setTimeout(function() {
+                                        mensajeElement.style.display = 'none';
+                                    }, 1000);
+                                }
+
+                                document.getElementById('toggle-favorito').addEventListener('click', function() {
+                                    var xhr = new XMLHttpRequest();
+                                    xhr.onreadystatechange = function() {
+                                        if (xhr.readyState === 4 && xhr.status === 200) {
+                                            var response = JSON.parse(xhr.responseText);
+
+                                            // Actualiza el texto del botón
+                                            if (response.is_favorito) {
+                                                document.getElementById('toggle-favorito').innerText = 'Quitar de favoritos ★';
+                                            } else {
+                                                document.getElementById('toggle-favorito').innerText = 'Añadir a favoritos ★';
+                                            }
+
+                                            // Muestra el mensaje emergente
+                                            mostrarMensaje(response.message);
+                                        }
+                                    };
+                                    xhr.open('GET', '{% url "viajes:toggle_favorito" pk=viajes.pk %}', true);
+                                    xhr.send();
+                                });
+
+                                // Al cargar la página, actualiza el texto del botón según el estado inicial
+                                window.onload = function() {
+                                    var isFavorito = {{ is_favorito|lower }};
+                                    if (isFavorito) {
+                                        document.getElementById('toggle-favorito').innerText = 'Quitar de favoritos ★';
+                                    } else {
+                                        document.getElementById('toggle-favorito').innerText = 'Añadir a favoritos ★';
+                                    }
+                                };
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -38,24 +92,24 @@
                         
                             <a id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
                                 Opciones publicación ▼</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!-- Contenido del menú desplegable -->
-                                <form method="POST" action="{% url 'viajes:detalle' pk=viajes.pk %}">
-                                    {% csrf_token %}
-                                    <button class="btn btn-primary text-uppercase boton-borrar" name="delete_viaje">Eliminar</button>
-                                </form>
-                             <div class="dropdown-divider1"></div>
-                                <a class="dropdown-item" href="#">EDITAR</a>
-                                
-                             </div>
-                        </li> 
-
-                            
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <!-- Contenido del menú desplegable -->
+                                    <form method="POST" action="{% url 'viajes:detalle' pk=viajes.pk %}">
+                                        {% csrf_token %}
+                                        <button class="btn btn-primary text-uppercase boton-borrar" name="delete_viaje">Eliminar</button>
+                                    </form>
+                                    <div class="dropdown-divider1"></div>
+                                    <div class="cuadro-boton-editar">
+                                        <form method="POST" action="{% url 'viajes:edit_viaje' pk=viajes.pk %}">
+                                        <button class="btn btn-primary text-uppercase boton-editar" name="editar_viaje">Editar</button>
+                                    </form>
+                                </div>
+                                                   
                         {% endif %}
+                        
                         <div class="detalles-viaje">
                             <p>{{viajes.contenido}}</p>
                             <img src="{{viajes.imagenes.url}}">
-                            <br>
                         </div>        
                         <div class="d-flex justify-content-center mt-4">
                             {% if viaje_anterior %}

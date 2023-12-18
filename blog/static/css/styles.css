@@ -11012,7 +11012,7 @@ body > div > div > div > div > div > form > div {
     margin-right: 10px;
   }
 
-  .boton-borrar {
+  .boton-borrar, .boton-editar {
     color:black;
     background-color:transparent;
     border-color: transparent;
@@ -11026,9 +11026,20 @@ body > div > div > div > div > div > form > div {
     
   }
   
-  body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form {
+  .boton-editar:hover {
+    background-color: green;
+    color:white;
+    border-color:transparent;
+    
+  }
+
+  body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form, .cuadro-boton-editar  {
     text-align: center;
     
+  }
+
+  .cuadro-boton-editar:hover {
+    background-color: green;
   }
 
   body > div.container.px-4.px-lg-5 > div > div > div.dropdown-menu.show > form:hover {
@@ -11062,3 +11073,53 @@ body > div > div > div > div > div > form > div {
   border-color: #0085A1;
   margin: 5% 0 10% 0;
 }
+
+.post-subtitulos {
+  font-size: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:#6c757d;
+  margin: 3% 0;  
+}
+
+#mensaje-favorito {
+        display: none;
+        position: fixed;
+        bottom: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    #toggle-favorito {
+      background-color: transparent;
+      padding:7px;
+      border-color: transparent;
+      font-size: 16px;
+    }
+
+    #toggle-favorito:hover {
+      color:white;
+      border-radius: 10%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+.masthead-favoritos {
+  
+  margin-top: 20%;
+  
+
+}
+
+body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
+  margin-left:-15%;
+}
+
+#no-hay {
+  font-style: italic;
+}
+

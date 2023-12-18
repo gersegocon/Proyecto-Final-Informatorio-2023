@@ -3,6 +3,12 @@
 {% block title %}
     <title>Blog Grupo 5 - Contacto</title>
 {% endblock title %}  
+
+{% block usuario-barra %}
+<a class="nav-link px-lg-3 py-3 py-lg-4" style="text-shadow: 0 0 7px rgba(255, 255, 255, 1); ; color: black;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Hola {{ user.username }} ▼
+</a>
+{% endblock usuario-barra %} 
     {% block contenido %}
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('{% static 'assets/img/contact-bg.jpg' %}')">
@@ -47,20 +53,16 @@
                                     <div class="invalid-feedback" data-sb-feedback="message:required">Debe escribir un mensaje!.</div>
                                 </div>
                                 <br />
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
+                               
+
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
                                         <div class="fw-bolder">Formulario completado exitosamente!</div>
                                         
                                     </div>
                                 </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
+                                
+
                                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error enviando el mensaje!</div></div>
                                 <!-- Submit Button-->
                                 <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Enviar</button>
