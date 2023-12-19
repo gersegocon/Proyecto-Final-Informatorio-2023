@@ -37,13 +37,13 @@
                 
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'home' %}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'nosotros' %}">Acerca de Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'viajes:listar' %}">viajes</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'viajes:listar' %}">Viajes</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'contacto' %}">Contacto</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         {% block usuario-barra %}
                         <a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hola {{ user.username }} ▼
+                            Hola, {{ user.username }} ▼
                 
                         </a>
                         {% endblock usuario-barra %}

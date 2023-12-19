@@ -108,7 +108,6 @@ def mis_favoritos(request):
     return render(request, 'viajes/mis_favoritos.html', {'viajes_favoritos': viajes_favoritos})
 
 
-##### HAY QUE REVISAR, SALE ERROR 403 FORBIDDEN 
 @login_required
 def EditarViajes(request, pk):
     viaje = get_object_or_404(Viaje, pk=pk)
