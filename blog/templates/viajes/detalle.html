@@ -19,7 +19,7 @@
                             <h1>{{viajes.titulo}}</h1>
                             <span class="subheading">Todas las anécdotas y datos de este destino.</span>
                             <p class="post-meta-detalle">
-                                Publicado por <a href="#">{{viajes.autor}}</a>
+                                Publicado por <a href="{% url 'usuarios:perfil' viajes.autor_id %}">{{viajes.autor}}</a>
                                 el {{ viajes.fecha_publicacion }}
                             </p>
                             <!-- para favs -->

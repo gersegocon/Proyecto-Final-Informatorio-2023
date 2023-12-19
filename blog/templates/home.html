@@ -104,7 +104,7 @@
                                 <p class="post-subtitulos">{{ viaje.resumen }}</p>
                                                                 
                                 <p class="post-meta">
-                                    Publicado por <a href="{% url 'usuarios:perfil' %}">{{viaje.autor}}</a>
+                                    Publicado por <a href="{% url 'usuarios:perfil' viaje.autor_id %}">{{viaje.autor}}</a>
                                     el {{ viaje.fecha_publicacion }}
                                 </p>
                             </div>

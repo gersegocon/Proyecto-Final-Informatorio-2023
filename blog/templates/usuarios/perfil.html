@@ -1,7 +1,59 @@
-{% extends 'home.html' %}
+{% extends 'usuarios/mi-perfil.html' %}
 {% load static %}
-{% block titulo %}MI PERFIL{% endblock titulo %}
+
+{% block title %}
+    <title>Perfil usuario: {{ usuarios.username }}</title>
+{% endblock title %} 
+
 {% block contenido %}
-PERFIL DE
-    <p>{{ user.username }}</p>
+    <body class="body-login" style="background-image: url('{% static 'assets/img/inicio-sesion.png' %}'); background-color:rgba(255, 255, 255, 0.5); background-blend-mode: overlay; ">
+        <div class="container-fluid">
+            <!-- Contenido de la página -->
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading"  style="background-color: rgb(0, 0, 0, 0.8)">
+                            <br>
+                            {% if usuarios.is_staff %}
+                                <h1 style="white-space: nowrap; display: inline-block;">Perfil usuario (Staff)</h1>
+                                {% if usuarios.is_superuser %}
+                                    <span class="subheading">Usuario administrador</span>
+                                {% else %}
+                                    <span class="subheading">Usuario colaborador</span>
+                                {% endif %}
+                                
+                            {% else %}
+                            <h1 style="white-space: nowrap; display: inline-block;">Perfil usuario</h1>
+                                <span class="subheading">Usuario miembro</span>
+                                
+                            {% endif %}
+                            <div class="miperfil-nombre-apellido">
+                                <strong>Nombre y apellido:</strong>
+                                <i id="miperfil-nombre-apellido">{{ usuarios.first_name }}</i>
+                            </div>
+                            
+                            <div class="miperfil-nameuser">
+                                <strong>Nombre de usuario:</strong>
+                                <i id="miperfil-nameuser">{{ usuarios.username }}</i>
+                            </div>
+                            
+                            <div class="miperfil-email">
+                                <strong>Correo electrónico:</strong>
+                                <i id="miperfil-email">{{ usuarios.email }}</i>
+                            </div>
+            
+                            <div class="miperfil-fecha-registro">
+                                <strong>Fecha de registro:</strong>
+                                <i id="miperfil-fecha-registro"> {{ usuarios.date_joined }} </i>
+                            </div>
+            
+                            
+                            
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 {% endblock contenido %}

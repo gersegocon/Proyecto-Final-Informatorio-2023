@@ -5,12 +5,16 @@ from django.contrib import messages
 from django.views.generic import CreateView
 from .forms import RegistroForm
 from django.urls import reverse_lazy
+from .models import Usuario
 
 # Create your views here.
 
 
-def Perfil(request):
-    return render(request, 'usuarios/perfil.html')
+def Perfil(request, pk):
+    contexto = {}
+    usuario = Usuario.objects.get(pk=pk)
+    contexto['usuarios'] = usuario
+    return render(request, 'usuarios/perfil.html', contexto)
 
 def MiPerfil(request):
     return render(request, 'usuarios/mi-perfil.html')
