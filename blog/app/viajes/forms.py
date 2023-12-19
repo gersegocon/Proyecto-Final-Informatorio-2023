@@ -1,5 +1,5 @@
 from django import forms
-from .models import Viaje
+from .models import Viaje, Categoria
 
 class ViajeForm(forms.ModelForm):
 
@@ -12,3 +12,9 @@ class ViajeForm(forms.ModelForm):
             'imagenes',
             'categoria_viaje',
         ]
+
+class CategoriaForm(forms.ModelForm):
+    class Meta:
+        model = Categoria
+        fields = ['nombre']
+

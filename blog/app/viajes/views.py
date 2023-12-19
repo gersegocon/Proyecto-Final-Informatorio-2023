@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Viaje, Categoria
 from django.urls import reverse
-from .forms import ViajeForm
+from .forms import ViajeForm, CategoriaForm
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from app.usuarios.models import Favorito
@@ -78,7 +78,7 @@ def AddViaje(request):
             viaje = form.save(commit=False)
             viaje.autor = request.user
             form.save()
-            return redirect('home')
+            return redirect('viajes:listar')
     else:
         form = ViajeForm()
 
@@ -128,3 +128,17 @@ def EditarViajes(request, pk):
 
 def editar_error(request):
     return render(request, 'viajes/editar_error.html')
+
+@login_required
+def CrearCategoria(request):
+    if request.method == 'POST':
+        categoria_form = CategoriaForm(request.POST)
+
+        if categoria_form.is_valid():
+            categoria_form.save()
+            return redirect('viajes:listar')
+
+    else:
+        categoria_form = CategoriaForm()
+
+    return render(request, 'viajes/crear_categoria.html', {'categoria_form': categoria_form})

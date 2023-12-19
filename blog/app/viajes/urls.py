@@ -12,4 +12,5 @@ urlpatterns = [
      path('mis_favoritos', views.mis_favoritos, name='mis_favoritos'),
      path('viajes/<int:pk>/editar', views.EditarViajes, name='edit_viaje'),
      path('editar_error', views.editar_error, name='editar_error'),
+     path('crear_categoria/', views.CrearCategoria, name='crear_categoria'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

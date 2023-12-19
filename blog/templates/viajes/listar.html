@@ -33,6 +33,9 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         {% if user.is_authenticated %}
                             <a class="btn text-uppercase" id="crear" href="{% url 'viajes:addViaje' %}">+ Crear publicación</a>
+                            {% if user.is_staff %}
+                                <a class="btn text-uppercase" id="crear" href="{% url 'viajes:crear_categoria' %}">+ Crear categoría</a>
+                            {% endif %}
                         {% endif %}
                         <div class="submenu">
                             <div class="dropdown">

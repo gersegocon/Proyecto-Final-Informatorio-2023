@@ -1,0 +1,17 @@
+{% extends 'viajes/addViaje.html' %}
+{% load static %}
+{% block title %}
+    <title>{{user.username}}: Crear categoría</title>
+{% endblock title %}  
+
+
+{% block login %}
+    <h1 style="white-space: nowrap; display: inline-block;">Crea una categoría</h1>
+    <span class="subheading">Clasificá tus viajes</span>
+    <br>
+    <form method="post" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        {% csrf_token %}
+        {{ categoria_form.as_p }}
+        <button class="btn btn-primary text-uppercase" id="boton-guardar" type="submit">Guardar</button>
+    </form>
+{% endblock login %}
