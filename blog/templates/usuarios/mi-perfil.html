@@ -1,58 +1,60 @@
-{% extends 'home.html' %}
+{% extends 'usuarios/login.html' %}
 {% load static %}
 {% block title %}
     <title>Mi perfil: {{ user.username }}</title>
 {% endblock title %}  
 
-{% block barra-para-fav %}
-<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" style="color: black;" href="{% url 'home' %}">Blog Grupo 5</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-                <i class="fas fa-bars"></i>
-            </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="{% url 'home' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="{% url 'nosotros' %}">Acerca de Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="{% url 'viajes:listar' %}">viajes</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="{% url 'contacto' %}">Contacto</a></li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            {% block usuario-barra %}
-                            <a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Hola {{ user.username }} ▼
-
-                            </a>
-                            {% endblock usuario-barra %}
-
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!-- Contenido del menú desplegable -->
-                                <a class="dropdown-item" href="{% url 'usuarios:mi-perfil' %}">Mi perfil</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'viajes:mis_favoritos' %}">Viajes favoritos ★</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'usuarios:logout' %}">Cerrar sesión</a>
-                            </div>
-                        </li>
-                        {% else %}
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'usuarios:login' %}">LOGIN</a></li>
-                            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'usuarios:registro' %}">REGISTRO</a></li>
-
-                        {% endif %}
-{% endblock barra-para-fav %}
-
 {% block contenido %}
-<header class="masthead-miperfil">
-    <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                MI PERFIL: <p>{{ user.username }}</p>
-                           
+    <body class="body-login" style="background-image: url('{% static 'assets/img/inicio-sesion.png' %}'); background-color:rgba(255, 255, 255, 0.5); background-blend-mode: overlay; ">
+        <div class="container-fluid">
+            <!-- Contenido de la página -->
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading"  style="background-color: rgb(0, 0, 0, 0.8)">
+                            <br>
+                            {% if user.is_staff %}
+                                <h1 style="white-space: nowrap; display: inline-block;">Mi perfil (Staff)</h1>
+                                {% if user.is_superuser %}
+                                    <span class="subheading">Usuario administrador</span>
+                                {% else %}
+                                    <span class="subheading">Usuario colaborador</span>
+                                {% endif %}
+                                
+                            {% else %}
+                            <h1 style="white-space: nowrap; display: inline-block;">Mi perfil</h1>
+                                <span class="subheading">Usuario miembro</span>
+                                
+                            {% endif %}
+                            <div class="miperfil-nombre-apellido">
+                                <strong>Nombre y apellido:</strong>
+                                <i id="miperfil-nombre-apellido">{{ user.first_name }}</i>
+                            </div>
+                            
+                            <div class="miperfil-nameuser">
+                                <strong>Nombre de usuario:</strong>
+                                <i id="miperfil-nameuser">{{ user.username }}</i>
+                            </div>
+                            
+                            <div class="miperfil-email">
+                                <strong>Correo electrónico:</strong>
+                                <i id="miperfil-email">{{ user.email }}</i>
+                            </div>
+            
+                            <div class="miperfil-fecha-registro">
+                                <strong>Fecha de registro:</strong>
+                                <i id="miperfil-fecha-registro"> {{ user.date_joined }} </i>
+                            </div>
+            
+                            <div class="miperfil-ultimo-inicio">
+                                <strong>Último inicio de sesión:</strong>
+                                <i id="miperfil-ultimo-inicio"> {{ user.last_login }} </i>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-
+    </body>
 {% endblock contenido %}
