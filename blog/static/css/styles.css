@@ -10752,7 +10752,7 @@ header.masthead .site-heading, body.body-login .site-heading {
 }
 
 body.body-login .site-heading {
-  width:auto; 
+  width: auto; 
   border-radius: 50px;
   
 }
@@ -10998,17 +10998,28 @@ body > div > div > div > div > div > form > div {
     align-items: end ;
   }
 
-  .nombre, .apellido, .username, .email, .contraseña, .recontraseña {
+  .formulario-crear {
+    align-items:center;  
+  }
+  
+  .formulario-crear > .titulo-viaje {
+    margin-left:6%;
+  }
+  .nombre, .apellido, .username, .email, .contraseña, .recontraseña, .titulo-viaje, .resumen, .texto, .imagen-viaje, .seleccion-categoria {
     padding: 5px 50px 5px 0px;
     font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
   
-    #caja-nombre, #caja-apellido, #caja-username, #caja-email, #caja-contraseña, #caja-recontraseña {
+    #caja-nombre, #caja-apellido, #caja-username, #caja-email, #caja-contraseña, #caja-recontraseña, #caja-titulo-viaje, #caja-resumen, #caja-texto, #caja-imagen, #caja-seleccion-categoria {
     padding: 5px 0 5px 5px;
     font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  #label-nombre, #label-apellido, #label-username, #label-email, #label-contraseña, #label-recontraseña {
+  #caja-texto {
+    margin-left:0%;
+  }
+
+  #label-nombre, #label-apellido, #label-username, #label-email, #label-contraseña, #label-recontraseña, #label-titulo-viaje, #label-resumen, #label-texto, #label-imagen-viaje, #label-seleccion-categoria {
     margin-right: 10px;
   }
 
