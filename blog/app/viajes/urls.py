@@ -10,4 +10,7 @@ urlpatterns = [
      path('addViaje', views.AddViaje, name='addViaje'),
      path('toggle_favorito/<int:pk>/', views.toggle_favorito, name='toggle_favorito'),
      path('mis_favoritos', views.mis_favoritos, name='mis_favoritos'),
+     path('comentario/add/<int:viaje_id>', views.AddComentario, name='add_comentario'),
+     path('comentario/delete/<int:comentario_id>', views.BorrarComentario, name='delete_comentario'),
+     path('comentario/edit/<int:comentario_id>', views.EditarComentario, name='edit_comentario'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

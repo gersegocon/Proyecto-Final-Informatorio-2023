@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Viaje, Categoria
+from .models import Viaje, Categoria, Comentario
 from django.urls import reverse
-from .forms import ViajeForm
+from .forms import ViajeForm, ComentarioForm
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from app.usuarios.models import Favorito
@@ -48,6 +48,9 @@ def DetalleViajes(request, pk):
     viaje = Viaje.objects.get(pk=pk)
     is_favorito = False
 
+    c = n.comentarios.all()
+    contexto['comentarios'] = c
+
     # Verifica si el viaje está en favoritos del usuario
     if request.user.is_authenticated:
         is_favorito = Favorito.objects.filter(usuario=request.user, viaje=viaje).exists()
@@ -56,6 +59,17 @@ def DetalleViajes(request, pk):
     if request.method == 'POST' and 'delete_viaje' in request.POST:
         viaje.delete()
         return redirect('viajes:listar')
+    
+    # Comentarios
+    if request.method == 'POST' and 'add_comentario' in request.POST:
+        form = ComentarioForm(request.POST)
+        if form.is_valid():
+            comentario = form.save(commit=False)
+            comentario.usuario = request.user
+            form.save()
+            return redirect('viajes:detalle', pk=pk)
+    else:
+        form = ComentarioForm()
 
     # Obtener el viaje anterior y el siguiente
     viaje_anterior = Viaje.objects.filter(fecha_publicacion__lt=viaje.fecha_publicacion).order_by('-fecha_publicacion').first()
@@ -105,3 +119,49 @@ def toggle_favorito(request, pk):
 def mis_favoritos(request):
     viajes_favoritos = Viaje.objects.filter(favorito__usuario=request.user)
     return render(request, 'viajes/mis_favoritos.html', {'viajes_favoritos': viajes_favoritos})
+
+@login_required
+def AddComentario(request, viaje_id):
+
+    viaje = get_object_or_404(Viaje, id = viaje_id)   
+    if request.method == 'POST':
+        contenido = request.POST.get("contenido")
+        usuario = request.user.username
+        # creacion de comentario
+        Comentario.objects.create(viaje = viaje, usuario = usuario, contenido = contenido)
+    
+    return redirect('viajes:detalle', pk = viaje_id)
+
+
+@login_required
+def BorrarComentario(request, comentario_id):
+
+    comentario = get_object_or_404(Comentario, id = comentario_id)   
+    if comentario.usuario == request.user.username:
+        comentario.delete()
+    
+    return redirect('viajes:detalle', pk = comentario.viaje.pk)
+
+
+@login_required
+def EditarComentario(request, comentario_id):
+    comentario = get_object_or_404(Comentario, id=comentario_id)
+
+    # Mensaje de error en caso de no ser el autor del comentario
+    if comentario.usuario != request.user.username:
+        messages.error(request, 'No tenes permiso para editar este comentario')
+        return redirect('viajes:detalle', pk=comentario.viaje.pk)
+    
+    if request.method == 'POST':
+        form = ComentarioForm(request.POST, instance=comentario)
+        if form.is_valid():
+            form.save()
+            return redirect('viajes:detalle', pk=comentario.viaje.pk)
+    else:
+        form = ComentarioForm(instance=comentario)
+
+    contexto = {
+        'form':form,
+        'comentario':comentario,
+    }
+    return render(request, 'viajes/editar_comentario.html', contexto)
