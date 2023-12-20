@@ -21,7 +21,7 @@
                             <form method="post"> {% csrf_token %}
                                 {% if messages %}
                                     {% for m in messages %}
-                                    <div class="alert alert-danger">{{ m }}</div>
+                                    <div class="alert alert-danger" style="font-family:'Work Sans', sans-serif;">{{ m }}</div>
                                     {%endfor%}
                                 {%endif%}
                                 <div class="caja-login">

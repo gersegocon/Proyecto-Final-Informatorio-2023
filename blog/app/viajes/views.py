@@ -81,7 +81,7 @@ def AddViaje(request):
             return redirect('viajes:listar')
     else:
         form = ViajeForm()
-
+    
     return render (request, 'viajes/addViaje.html', {'form':form})
 
 @login_required

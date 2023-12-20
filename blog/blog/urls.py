@@ -25,7 +25,8 @@ urlpatterns = [
     path('', views.ListarViajesHome, name='home'),
     path('nosotros/', views.Nosotros, name='nosotros'),
     path('viajes/', include('app.viajes.urls')),
-    path('contacto/', views.Contacto, name='contacto'),
+    
     path('usuarios/', include('app.usuarios.urls')),
+    path('', include('app.contacto.urls'), name='contacto')
    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

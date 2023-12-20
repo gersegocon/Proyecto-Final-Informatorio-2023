@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #Mis aplicaciones
     'app.usuarios',
     'app.viajes',
+    'app.contacto',
 ]
 
 MIDDLEWARE = [
