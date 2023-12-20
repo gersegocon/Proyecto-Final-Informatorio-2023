@@ -13,7 +13,7 @@ class Viaje(models.Model):
     resumen = models.CharField('Resumen', max_length=200, null=True)
     fecha_publicacion = models.DateTimeField('Data', auto_now_add=True)
     contenido = models.TextField('Texto')
-    imagenes = models.ImageField(upload_to='viajes')
+    imagenes = models.ImageField('Imágenes',upload_to='viajes')
     categoria_viaje = models.ForeignKey(Categoria, on_delete= models.SET_NULL, null=True)
     
     def default_autor():

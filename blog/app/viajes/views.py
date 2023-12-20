@@ -81,8 +81,8 @@ def AddViaje(request):
             return redirect('viajes:listar')
     else:
         form = ViajeForm()
-    categorias_viaje = Categoria.objects.all()
-    return render (request, 'viajes/addViaje.html', {'categorias_viaje': categorias_viaje, 'form':form})
+
+    return render (request, 'viajes/addViaje.html', {'form':form})
 
 @login_required
 def toggle_favorito(request, pk):
@@ -142,4 +142,3 @@ def CrearCategoria(request):
         categoria_form = CategoriaForm()
 
     return render(request, 'viajes/crear_categoria.html', {'categoria_form': categoria_form})
-

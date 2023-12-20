@@ -24,55 +24,33 @@
             </div>
         </header>
         <!-- Main Content-->
-        <main class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p id="texto-contacto">¿Nos mantenemos en contacto?</p>
-                        <p id="texto-contacto">Completá el siguiente formulario para enviarnos un mensaje y te lo responderemos tan pronto como sea posible.</p>
-                        <div class="my-5">
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Ingrese su nombre..." data-sb-validations="required" />
-                                    <label for="name">Nombre</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un nombre.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Ingrese su email..." data-sb-validations="required,email" />
-                                    <label for="email">Correo electrónico</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere una dirección de correo.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Correo invalido.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Ingrese su número de teléfono.." data-sb-validations="required" />
-                                    <label for="phone">Número de teléfono</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">Se requiere un número de teléfono.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Ingrese su mensaje aquí..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Mensaje</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">Debe escribir un mensaje!</div>
-                                </div>
-                                <br />
-                               
-
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Formulario completado exitósamente!</div>
-                                        
-                                    </div>
-                                </div>
-                                
-
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error enviando el mensaje!</div></div>
-                                <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Enviar</button>
-                            </form>
+        
+            <div class="contact-section">
+                <div class="mid-containt-contact">
+                    <strong style="font-family: 'Work Sans', sans-serif;">¡Nos podes encontrar aquí!</strong>
+                    <div class="contacus-form clear-contact">
+                        <div class="contac-map left-contact">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.784779336457!2d-59.05114912534818!3d-27.444817315645054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450bb412275619%3A0xe1c791e7bcdafb37!2sAeropuerto%20Internacional%20de%20Resistencia%20(SIS%20-%20SARE%20-%20RES)!5e0!3m2!1ses!2sar!4v1703043019210!5m2!1ses!2sar" width="100%" height="637" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="contact-form right-contact">
+                            <h4 style="font-family: 'Work Sans', sans-serif;">¿Nos mantenemos en contacto?</h4>
+                            <p style="font-family: 'Work Sans', sans-serif;">Completá el siguiente formulario para enviarnos un mensaje y te lo responderemos tan pronto como sea posible.</p>
+                            <div class="contact-form-r clear-contact">
+                                <form action="#">
+                                    <input type="email"placeholder="Correo electrónico" class="default-input-contact w-100">
+                                    <input type="text" placeholder="Nombre" class="default-input-contact w-50-contact left-contact">
+                                    <input type="text" placeholder="Teléfono" class="default-input-contact w-50-contact right-contact">
+                                    <textarea class="default-input-contact w-100" placeholder="Mensaje"></textarea>
+                                    <button type="submit" class="btn btn-primary text-uppercase" id="submitButton" style="width: 600px;">ENVIAR</button>
+                                    
+                                                
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        
         {% endblock contenido %}
        
         

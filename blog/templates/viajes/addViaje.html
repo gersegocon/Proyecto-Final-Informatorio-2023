@@ -6,47 +6,14 @@
 
 {% block login %}
     <h1 style="white-space: nowrap; display: inline-block;">Crea una publicación</h1>
-        <span class="subheading">Contale a todos sobre tu viaje</span>
-        <br>
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="caja-crear">
-                <div class="formulario-crear">
-                
-                    <div class="titulo-viaje">
-                        <label for="Titulo-viaje" id="label-titulo-viaje">Título:</label>
-                        <input type="text" name="titulo" placeholder="Título de tu viaje" required id="caja-titulo-viaje">
-                    </div>
-                
-                    
-                    <div class="resumen">
-                        <label for="Resumen" id="label-resumen">Resumen:</label>
-                        <input type="text" name="resumen" placeholder="Resumen de tu viaje" required id="caja-resumen">
-                    </div>
-
-                    <div class="texto">
-                        <label for="Texto" id="label-texto">Texto:</label>
-                        <textarea name="texto" placeholder="Toda la información de tu viaje aquí" cols="40" rows="10" required="" id="caja-texto"></textarea>
-                    </div>
-                    
-                    <div class="imagen-viaje">
-                        <label for="Imagen-viaje" id="label-imagen-viaje">Imagen:</label>
-                        <input type="file" name="imagen" accept="image/*" required="" id="caja-imagen">
-                    </div>
-
-                    <div class="seleccion-categoria">
-                        <label for="Seleccion-categoria" id="label-seleccion-categoria">Categoría:</label>
-                        <select name="categoria_viaje" required="" id="caja-seleccion-categoria">
-                            <option value="" selected="">---------</option>                     
-                            {% for cat in categorias_viaje %}
-                                <option value={{cat.id}}>{{ cat.nombre }}</option>
-                            {% endfor %}                                                                        
-                        </select>
-                        
-                    </div>
-                    
-                </div>
-                <button class="btn btn-primary text-uppercase" id="boton-guardar" type="submit">Guardar</button>
-            </div>
-        </form>
+    <span class="subheading">Contale a todos sobre tu viaje</span>
+    <br>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="formulario-crear">
+            {{ form.as_p }}
+        </div>
+        <button class="btn btn-primary text-uppercase" id="boton-guardar" type="submit">Guardar</button>
+    </form>
+    
 {% endblock login %}
