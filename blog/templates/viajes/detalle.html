@@ -128,8 +128,8 @@
                                         {% csrf_token %}
                                         {% if comentario.usuario == user.username %}
                                         <div class="botones-comentarios" style="text-align: end; margin-right:2%">
-                                            <button class="borrar-comentario" type="submit">ELIMINAR</button>
-                                            <a id="editar-comentario" href="{% url 'viajes:edit_comentario' comentario_id=comentario.id %}">EDITAR</a>
+                                            <button class="borrar-comentario" type="submit">🗑️ ELIMINAR</button>
+                                            <a id="editar-comentario" href="{% url 'viajes:edit_comentario' comentario_id=comentario.id %}">📝 EDITAR</a>
                                         </div>
                                         {% endif %}
                                     </form>

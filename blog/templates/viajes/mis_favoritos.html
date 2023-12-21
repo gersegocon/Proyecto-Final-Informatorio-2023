@@ -30,11 +30,11 @@
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <!-- Contenido del menú desplegable -->
-                                <a class="dropdown-item" href="{% url 'usuarios:mi-perfil' %}">Mi perfil</a>
+                                <a class="dropdown-item" href="{% url 'usuarios:mi-perfil' %}">Mi perfil 👨‍💼</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'viajes:mis_favoritos' %}">Viajes favoritos ★</a>
+                                <a class="dropdown-item" href="{% url 'viajes:mis_favoritos' %}">Viajes favoritos ⭐</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{% url 'usuarios:logout' %}">Cerrar sesión</a>
+                                <a class="dropdown-item" href="{% url 'usuarios:logout' %}">Cerrar sesión 🚫</a>
                             </div>
                         </li>
                         {% else %}
@@ -59,8 +59,8 @@
                         <div class="pie-pagina-viajes">
                             <div class="col-md-10 col-lg-8 col-xl-7">
                                 <div class="post-heading">
-                                    <h2>Viajes favoritos ★</h2>
-                                    
+                                    <h3>Viajes favoritos 😍✨</h3>
+                                    <br>
                                     
                                 </div>
                             </div>
@@ -69,27 +69,7 @@
                 </header>
                 
                 {% if viajes_favoritos %}
-                <div class="submenu">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="filtroDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filtrar por:
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="filtroDropdown">
-                            <a class="dropdown-item" href="{% url 'viajes:listar' %}">TODAS</a>
-                            {% for cat in categorias %}
-                                <a class="dropdown-item" href="?id={{cat.pk}}">{{cat.nombre}}</a>
-                            {% endfor %}
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="?antiguedad_asc=1">Mas antiguas primero</a>
-                            <a class="dropdown-item" href="?antiguedad_des=1">Mas recientes primero</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="?orden_asc=1">A-Z</a>
-                            <a class="dropdown-item" href="?orden_des=1">Z-A</a>
-                        </div>
-                    </div>
-                </div>
-
-                
+                                
                     {% for viaje in viajes_favoritos %}
                     <!-- Post preview-->
                     <div class="post-preview">
