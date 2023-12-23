@@ -136,12 +136,13 @@ def EditarViajes(request, pk):
             form = ViajeForm(instance=viaje)
         
     # solo el autor puede editar la noticia
-    # if viaje.autor != request.user user.is_staff:
-    #     return  redirect('viajes:editar_error')
+    if not request.user.is_staff:
+        if viaje.autor != request.user:
+            return  redirect('viajes:editar_error')
     return render(request, 'viajes/editar.html', {'form':form})
 
-# def editar_error(request):
-#     return render(request, 'viajes/editar_error.html')
+def editar_error(request):
+    return render(request, 'viajes/editar_error.html')
 
 @login_required
 def CrearCategoria(request):
@@ -175,7 +176,7 @@ def AddComentario(request, viaje_id):
 def BorrarComentario(request, comentario_id):
 
     comentario = get_object_or_404(Comentario, id = comentario_id)   
-    if comentario.usuario == request.user.username:
+    if comentario.usuario == request.user.username or request.user.is_staff:
         comentario.delete()
     
     return redirect('viajes:detalle', pk = comentario.viaje.pk)
@@ -186,9 +187,10 @@ def EditarComentario(request, comentario_id):
     comentario = get_object_or_404(Comentario, id=comentario_id)
 
     # Mensaje de error en caso de no ser el autor del comentario
-    if comentario.usuario != request.user.username:
-        messages.error(request, 'No tenes permiso para editar este comentario')
-        return redirect('viajes:detalle', pk=comentario.viaje.pk)
+    if not request.user.is_staff:
+        if comentario.usuario != request.user.username:
+            messages.error(request, 'No tenes permiso para editar este comentario')
+            return redirect('viajes:detalle', pk=comentario.viaje.pk)
     
     if request.method == 'POST':
         form = ComentarioForm(request.POST, instance=comentario)

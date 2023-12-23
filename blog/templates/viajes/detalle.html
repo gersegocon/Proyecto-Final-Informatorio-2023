@@ -127,7 +127,7 @@
                                     
                                     <form method="post" action="{% url 'viajes:delete_comentario' comentario.id %}">
                                         {% csrf_token %}
-                                        {% if comentario.usuario == user.username %}
+                                        {% if comentario.usuario == user.username or user.is_staff %}
                                         <div class="botones-comentarios" style="display: flex; flex-direction: row; align-items: center;">
                                             <button class="borrar-comentario" type="submit">🗑️ ELIMINAR</button>
                                             <a id="editar-comentario" href="{% url 'viajes:edit_comentario' comentario_id=comentario.id %}">📝 EDITAR</a>
