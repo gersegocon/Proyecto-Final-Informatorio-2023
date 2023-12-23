@@ -5,6 +5,7 @@
 {% endblock title %}  
 
 {% block contenido %}
+
     <body class="body-login" style="background-image: url('{% static 'assets/img/inicio-sesion.png' %}'); background-color:rgba(255, 255, 255, 0.5); background-blend-mode: overlay; ">
         <div class="container-fluid">
             <!-- Contenido de la página -->
@@ -49,6 +50,14 @@
                             <div class="miperfil-ultimo-inicio">
                                 <strong>Último inicio de sesión:</strong>
                                 <i id="miperfil-ultimo-inicio"> {{ user.last_login }} </i>
+                            </div>
+                            <div class="miperfil-imagen">
+                                <strong>Imagen de perfil:</strong>
+                                {% if user.imagen %}
+                                    <img src="{{ user.imagen.url }}" alt="Imagen de perfil de {{ user.username }}">
+                                {% else %}
+                                    <img src="{% static 'assets/img/default-user.png' %}" alt="Imagen de perfil predeterminada">
+                                {% endif %}
                             </div>
                             <br>
                         </div>

@@ -14,7 +14,9 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading"  style="background-color: rgb(0, 0, 0, 0.8)">
                             <br>
+                            
                             {% if usuarios.is_staff %}
+                            
                                 <h1 style="white-space: nowrap; display: inline-block;">Perfil usuario (Staff)</h1>
                                 {% if usuarios.is_superuser %}
                                     <span class="subheading">Usuario administrador</span>
@@ -46,6 +48,8 @@
                                 <strong>Fecha de registro:</strong>
                                 <i id="miperfil-fecha-registro"> {{ usuarios.date_joined }} </i>
                             </div>
+
+                            
             
                             
                             

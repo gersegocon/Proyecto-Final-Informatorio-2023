@@ -9,44 +9,11 @@
                             <h1 style="white-space: nowrap; display: inline-block;">Registrarse</h1>
                             <span class="subheading">Para usar la plataforma debe Registrarse</span>
                             <br><br>
-                            <form method="post">{% csrf_token %}
-                                {{form.errors}}
-                                <div class="caja-registro">
-                                    <div class="formulario-registro">
-                                        <div class="nombre">
-                                            <label for="Nombre" id="label-nombre">Nombre:</label>
-                                            <input type="text" name="first_name" placeholder="Nombre"required id="caja-nombre">
-                                        </div>
-                                    
-                                        <div class="apellido">
-                                            <label for="Apellido" id="label-apellido">Apellido:</label>
-                                            <input type="text" name="last_name" placeholder="Apellido"required id="caja-apellido">
-                                        </div>
-
-                                        <div class="username">
-                                            <label for="Nombre de Usuario" id="label-username">Nombre de usuario:</label>
-                                            <input type="text" name="username" placeholder="Nombre de Usuario" required id="caja-username">
-                                        </div>
-
-                                        <div class="email">
-                                            <label for="Correo Electronico" id="label-email">Correo electrónico:</label>
-                                            <input type="text" name="email" placeholder="correo@gmail.com" required id="caja-email">
-                                        </div>
-
-                                        <div class="contraseña">
-                                            <label for="Contraseña" id="label-contraseña">Contraseña:</label>
-                                            <input type="password" name="password1" placeholder="Contraseña" required id="caja-contraseña">
-                                        </div>
-
-                                        <div class="recontraseña">
-                                            <label for="Confirmar Contraseña" id="label-recontraseña">Confirmar contraseña:</label>
-                                            <input type="password" name="password2" placeholder="Confirmar Contraseña" required id="caja-recontraseña">
-                                        </div>
-                                    </div>
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Registrarse</button>
                                 
-                                    <br>
-                                    <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Registrarse</button>
-                                </div>
-                                </form>
+                            </form>
                             {% endblock login %}
      
