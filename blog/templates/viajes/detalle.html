@@ -116,7 +116,8 @@
                             <p>{{viajes.contenido}}</p>
                             
                         </div>
-
+                        
+                    <div class="comentarios">
                         <h4>Comentarios</h4>
                         {% if comentarios %}
                             {% for comentario in comentarios %}
@@ -127,7 +128,7 @@
                                     <form method="post" action="{% url 'viajes:delete_comentario' comentario.id %}">
                                         {% csrf_token %}
                                         {% if comentario.usuario == user.username %}
-                                        <div class="botones-comentarios" style="text-align: end; margin-right:2%">
+                                        <div class="botones-comentarios" style="display: flex; flex-direction: row; align-items: center;">
                                             <button class="borrar-comentario" type="submit">🗑️ ELIMINAR</button>
                                             <a id="editar-comentario" href="{% url 'viajes:edit_comentario' comentario_id=comentario.id %}">📝 EDITAR</a>
                                         </div>
@@ -159,7 +160,7 @@
                             <a style="font-weight: bold;" href="{% url 'usuarios:login' %}">INICIAR SESION</a>
                             <br>
                             {% endif %}
-
+                    </div>
                         <br>
                         <div class="d-flex justify-content-center mt-4">
                             {% if viaje_anterior %}
@@ -184,7 +185,9 @@
                             </a>
                         </div>
                         <br>
-                    
+                        <!-- Divider-->
+                        <hr class="my-4" />
+                 
 {% endblock contenido %}
                        
 

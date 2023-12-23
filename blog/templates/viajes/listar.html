@@ -37,6 +37,12 @@
                                 <a class="btn text-uppercase" id="crear" href="{% url 'viajes:crear_categoria' %}">+ Crear categoría</a>
                             {% endif %}
                         {% endif %}
+                        {% if not viajes %}
+                        <div class="no-hay-viajes" style="font-style: italic;">No hay publicaciones aún.</div>
+                        <!-- Divider-->
+                        <hr class="my-4" />
+                        
+                        {% else %}
                         <div class="submenu">
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="filtroDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,6 +62,9 @@
                                 </div>
                             </div>
                         </div>
+                            
+                        
+                        
                             {% for viaje in viajes %}
                             <!-- Post preview-->
                             <div class="post-preview">
@@ -79,10 +88,11 @@
                             </div>
                             <!-- Divider-->
                             <hr class="my-4" />
-                        {% endfor %}
-                    </div>
-                </div>
-        </div>
+                            {% endfor %}
+                        {% endif %}
+                    
+                
+        
 
                         
     {% endblock contenido %}

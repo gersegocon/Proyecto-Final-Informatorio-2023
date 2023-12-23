@@ -14,6 +14,15 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading"  style="background-color: rgb(0, 0, 0, 0.8)">
                             <br>
+                            <div class="miperfil-imagen" style="display: inline-block;">
+                                
+                                {% if user.imagen %}
+                                    <img class="imagenperfil" src="{{ user.imagen.url }}" alt="Imagen de perfil de {{ user.username }}">
+                                {% else %}
+                                    <img class="imagenperfil" src="{% static 'assets/img/default-user.png' %}" alt="Imagen de perfil predeterminada">
+                                {% endif %}
+                            </div>
+                            <br>
                             {% if user.is_staff %}
                                 <h1 style="white-space: nowrap; display: inline-block;">Mi perfil (Staff)</h1>
                                 {% if user.is_superuser %}
@@ -50,14 +59,6 @@
                             <div class="miperfil-ultimo-inicio">
                                 <strong>Último inicio de sesión:</strong>
                                 <i id="miperfil-ultimo-inicio"> {{ user.last_login }} </i>
-                            </div>
-                            <div class="miperfil-imagen">
-                                <strong>Imagen de perfil:</strong>
-                                {% if user.imagen %}
-                                    <img src="{{ user.imagen.url }}" alt="Imagen de perfil de {{ user.username }}">
-                                {% else %}
-                                    <img src="{% static 'assets/img/default-user.png' %}" alt="Imagen de perfil predeterminada">
-                                {% endif %}
                             </div>
                             <br>
                         </div>

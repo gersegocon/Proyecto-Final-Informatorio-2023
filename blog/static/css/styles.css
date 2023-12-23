@@ -7749,10 +7749,14 @@ textarea.form-control-lg {
   text-transform: lowercase !important;
 }
 
-.text-uppercase {
+.text-uppercase, .text-uppercase1 {
   text-transform: uppercase !important;
-  border-color:white;
+  
   margin-inline: center;
+}
+
+.text-uppercase {
+  border-color:white;
 }
 
 .volver {
@@ -10937,7 +10941,7 @@ body > div > div > div > div.detalles-viaje > img {
 
 #submitButton {
   border-color: #0085A1;
-  margin-bottom: 20%;
+  margin-bottom: 10%;
 }
 
 .body-login {
@@ -10993,24 +10997,30 @@ body > div > div > div > div > div > form > div {
     font-weight: 600;
   }
 
-  .formulario-registro {
-    align-items: end ;
-  }
+  
 
   
   
-  .nombre, .apellido, .username, .email, .contraseña, .recontraseña {
+  body > div.container-fluid > div > div > div > div > form > p:nth-child(2), body > div.container-fluid > div > div > div > div > form > p:nth-child(3), body > div.container-fluid > div > div > div > div > form > p:nth-child(4), body > div.container-fluid > div > div > div > div > form > p:nth-child(5), body > div.container-fluid > div > div > div > div > form > p:nth-child(6), body > div.container-fluid > div > div > div > div > form > p:nth-child(7) {
     padding: 5px 50px 5px 0px;
     font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    text-align: end;
   }
   
-    #caja-nombre, #caja-apellido, #caja-username, #caja-email, #caja-contraseña, #caja-recontraseña {
+    #id_first_name, #id_last_name, #id_username, #id_email, #id_password1, #id_password2 {
     padding: 5px 0 5px 5px;
     font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-right: 10%;
+    
   }
 
+  body > div.container-fluid > div > div > div > div > form > p:nth-child(8) {
+    padding: 5px 50px 5px 0px;
+    font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    
+  }
 
-  #label-nombre, #label-apellido, #label-username, #label-email, #label-contraseña, #label-recontraseña {
+  body > div.container-fluid > div > div > div > div > form > p:nth-child(2) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(3) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(4) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(5) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(6) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(7) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(8) > label {
     margin-right: 10px;
   }
 
@@ -11310,13 +11320,16 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 
 .borrar-comentario {
   color: red;
+  margin-left:60%;
+  
 }
 .borrar-comentario:hover, #editar-comentario:hover, .enviar-comentario:hover {
   color:#0085A1;
 }
 
 #editar-comentario {
-  padding:0.7% 2%;
+  padding:0.555% 2%;
+  margin-left:1%;
   
 }
 
@@ -11332,4 +11345,22 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 
 .acomodo-boton {
   text-align: end;
+}
+
+.miperfil-imagen, .perfil-imagen {
+  width: 200px; /* Ajusta el ancho del contenedor según tus necesidades */
+  height: 200px; /* Ajusta la altura del contenedor según tus necesidades */
+  overflow: hidden; /* Para ocultar cualquier parte de la imagen que sobresalga del contenedor */
+  border-radius: 50%; /* Hace que el contenedor sea circular */
+  
+  
+}
+
+/* Estilo de la imagen */
+.imagenperfil, .imagenperfilusuarios {
+  width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+  height: 100%; /* La altura se ajustará automáticamente para mantener la proporción original */
+  display: block; /* Eliminar espacio adicional debajo de la imagen */
+  object-fit: cover;
+  border-radius: 50%; /* Hace que la imagen sea circular */
 }

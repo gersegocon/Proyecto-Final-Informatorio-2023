@@ -8,12 +8,15 @@
                            {% block login %}
                             <h1 style="white-space: nowrap; display: inline-block;">Registrarse</h1>
                             <span class="subheading">Para usar la plataforma debe Registrarse</span>
-                            <br><br>
-                            <form method="post" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Registrarse</button>
+                            <br>
+                            
+                                <form class="formulario-registro" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    
+                                    <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Registrarse</button>
                                 
-                            </form>
+                                </form>
+                            
                             {% endblock login %}
      

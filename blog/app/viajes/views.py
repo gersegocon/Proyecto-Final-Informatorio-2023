@@ -136,12 +136,12 @@ def EditarViajes(request, pk):
             form = ViajeForm(instance=viaje)
         
     # solo el autor puede editar la noticia
-    if viaje.autor != request.user:
-        return  redirect('viajes:editar_error')
+    # if viaje.autor != request.user user.is_staff:
+    #     return  redirect('viajes:editar_error')
     return render(request, 'viajes/editar.html', {'form':form})
 
-def editar_error(request):
-    return render(request, 'viajes/editar_error.html')
+# def editar_error(request):
+#     return render(request, 'viajes/editar_error.html')
 
 @login_required
 def CrearCategoria(request):
