@@ -31,11 +31,11 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        {% if user.is_authenticated %}
+                        {% if user.is_staff %}
                             <a class="btn text-uppercase" id="crear" href="{% url 'viajes:addViaje' %}">+ Crear publicación</a>
-                            {% if user.is_staff %}
-                                <a class="btn text-uppercase" id="crear" href="{% url 'viajes:crear_categoria' %}">+ Crear categoría</a>
-                            {% endif %}
+                            
+                            <a class="btn text-uppercase" id="crear" href="{% url 'viajes:crear_categoria' %}">+ Crear categoría</a>
+                            
                         {% endif %}
                         {% if not viajes %}
                         <div class="no-hay-viajes" style="font-style: italic;">No hay publicaciones aún.</div>

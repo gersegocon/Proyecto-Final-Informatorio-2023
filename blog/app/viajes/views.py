@@ -96,6 +96,9 @@ def AddViaje(request):
     else:
         form = ViajeForm()
     
+    if not request.user.is_staff:
+        return  redirect('viajes:crear_error')
+    
     return render (request, 'viajes/addViaje.html', {'form':form})
 
 @login_required
@@ -144,6 +147,9 @@ def EditarViajes(request, pk):
 def editar_error(request):
     return render(request, 'viajes/editar_error.html')
 
+def crear_error(request):
+    return render(request, 'viajes/crear_error.html')
+
 @login_required
 def CrearCategoria(request):
     if request.method == 'POST':
@@ -155,6 +161,9 @@ def CrearCategoria(request):
 
     else:
         categoria_form = CategoriaForm()
+    
+    if not request.user.is_staff:
+        return  redirect('viajes:crear_error')
 
     return render(request, 'viajes/crear_categoria.html', {'categoria_form': categoria_form})
 
