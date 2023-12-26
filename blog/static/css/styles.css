@@ -11185,18 +11185,42 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 
 
 /* PARA FORMULARIO CONTACTO */
+.contact-section {
+  padding: 20px; /* Ajusta el espaciado según tus necesidades */
+}
+
+.mid-containt-contact {
+  max-width: 95%;
+  
+}
 
 
+.contac-map,
+.contact-form {
+    width: 100%;
+    max-width: none;
+    font-family:'Work Sans', sans-serif;
+}
 
 .contac-map{
-  width: 48%;
   height: auto;
+  margin-bottom: 20px;
 }
 
-.contact-form{
-  max-width: 48%;
-  font-family:'Work Sans', sans-serif;
+@media screen and (min-width: 768px) {
+  .contac-map,
+  .contact-form {
+      width: 48%;
+  }
 }
+
+@media screen and (max-width: 767px) {
+  .contac-map,
+  .contact-form {
+      width: 100%;
+  }
+}
+
 .contact-form-r .w-100{
   width: 100%;
 }
@@ -11234,11 +11258,11 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 }
 
 .default-input-contact {
-  padding: 25px 70px;
+  padding: 15px;
   border: 1px solid  #ddd;
   border-radius: 10px;
   
-  font-size: 20px;
+  font-size: 17px;
   box-shadow: 4px 4px 20px rgba(104, 109, 224, .2);
   transition: .4s;
   box-sizing: border-box;
