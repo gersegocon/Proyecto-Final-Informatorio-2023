@@ -148,7 +148,7 @@
                                 <form method="post" action="{% url 'viajes:add_comentario' viajes.pk %}">
                                     {% csrf_token %}
                                     <div class="comentario-detalle">
-                                        <textarea name="contenido" rows="2" cols="57" placeholder="Escribe aquí tu comentario"></textarea>
+                                        <textarea name="contenido" rows="2" cols="35" placeholder="Escribe aquí tu comentario"></textarea>
                                     </div>
                                     <div class="acomodo-boton">
                                         <button type="submit" class="enviar-comentario" name="add_comentario">ENVIAR</button>

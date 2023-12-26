@@ -3164,7 +3164,9 @@ textarea.form-control-lg {
 .dropdown-toggle {
   white-space: nowrap;
   padding: 10px;
-  margin-left:100%;
+  margin-left:65%;
+  margin-bottom: 10%;
+  margin-top: 2%;
   
   
 }
@@ -10713,8 +10715,10 @@ footer.border-top-viajes {
 }
 
 footer.border-top-viajes .pie-pagina-viajes{
-  margin: 50px 0 0 25.5%;
-  
+  margin: 70px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
 }
 
@@ -10907,8 +10911,8 @@ p.post-meta-listar {
   flex-direction: column;
   border-radius: 15px; /* Borde del cuadro */
   padding: 0 15px 0 15px; /* Espaciado interno del cuadro */
-  margin-left:100%;
-  margin-top: 10%;
+  margin-bottom: 10%;
+  
   width:fit-content;
   background-color: rgba(0, 0, 0, 0.4); /* Color de fondo del cuadro */
 }
@@ -11182,24 +11186,15 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 
 /* PARA FORMULARIO CONTACTO */
 
-.contact-section{
-  padding: 0px 0 0px 0;
-  background-color: #fff;
-}
 
-
-.contacus-form{
- padding-bottom: 0;
-}
 
 .contac-map{
   width: 48%;
- margin-right: 2%;
+  height: auto;
 }
 
 .contact-form{
-  width: 46%;
-  margin-top: 0px;
+  max-width: 48%;
   font-family:'Work Sans', sans-serif;
 }
 .contact-form-r .w-100{
@@ -11233,15 +11228,16 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 }
 
 .mid-containt-contact {
-  max-width: 1300px;
-  margin: auto;
+  max-width: 95%;
+  height: auto;
+  
 }
 
 .default-input-contact {
   padding: 25px 70px;
   border: 1px solid  #ddd;
   border-radius: 10px;
-  margin-right: 20px;
+  
   font-size: 20px;
   box-shadow: 4px 4px 20px rgba(104, 109, 224, .2);
   transition: .4s;
@@ -11295,14 +11291,14 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 
 .cajas-comentarios {
   background-color:rgb(0,0,255,0.05);
-  
-  
-  
+  max-width: 100%;
+  height: auto;
+    
 }
 
 .cajas-comentarios > a {
   font-style: italic;
-  text-decoration: underline;
+  
   margin-left:2%;
   
    
@@ -11330,7 +11326,8 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 
 .borrar-comentario {
   color: red;
-  margin-left:60%;
+  margin-left: 2%;
+  margin-top: 2%;
   
 }
 .borrar-comentario:hover, #editar-comentario:hover, .enviar-comentario:hover {
@@ -11340,6 +11337,7 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 #editar-comentario {
   padding:0.555% 2%;
   margin-left:1%;
+  margin-top: 2%;
   
 }
 
@@ -11355,6 +11353,14 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
 
 .acomodo-boton {
   text-align: end;
+}
+
+body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.comentario-detalle > textarea {
+  width: 100%; /* O ajusta el ancho según tus necesidades */
+    max-width: 100%; /* Establece un ancho máximo si es necesario */
+    height: AUTO; /* O ajusta la altura según tus necesidades */
+    resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+    
 }
 
 .miperfil-imagen, .perfil-imagen {
@@ -11373,4 +11379,13 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
   display: block; /* Eliminar espacio adicional debajo de la imagen */
   object-fit: cover;
   border-radius: 50%; /* Hace que la imagen sea circular */
+}
+
+.nombres-logos-git {
+  display: flex;
+  flex-direction: row;
+}
+.listado-nombres, .logos-git {
+  display: flex;
+  flex-direction: column;
 }
