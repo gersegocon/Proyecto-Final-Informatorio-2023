@@ -10798,7 +10798,17 @@ body.body-login .site-heading1 {
       padding: 7px; /* Ajusta el relleno para pantallas pequeñas */
   }
 }
-  
+ 
+@media screen and (max-width: 767px) {
+  /* Ajustes para pantallas pequeñas */
+  body.body-login .site-heading {
+      width: 110%; /* O el ancho deseado para pantallas pequeñas */
+      font-size: 15px;
+      margin-left:0; /* Tamaño de fuente para pantallas pequeñas */
+      background-color: #fff;
+  }
+}
+
   body > div.container-fluid > div > div > div > div > form > p > label {
       margin-right: 5px;
   }
@@ -11251,6 +11261,7 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
       width: 120%; /* O el ancho deseado para pantallas pequeñas */
       font-size: 15px;
       margin-left:0; /* Tamaño de fuente para pantallas pequeñas */
+      background-color: #fff;
   }
 
   .miperfil-nameuser,
