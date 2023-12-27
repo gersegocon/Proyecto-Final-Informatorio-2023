@@ -57,3 +57,24 @@ def actualizar_foto_perfil(request):
         form = PerfilUsuarioForm(instance=request.user)
 
     return render(request, 'usuarios/update_profile_picture.html', {'form': form})
+
+@login_required
+def actualizar_foto_perfil_users(request, pk):
+    
+    usuario = Usuario.objects.get(pk=pk)
+    
+    if request.method == 'POST':
+        form = PerfilUsuarioForm(request.POST, request.FILES, instance=usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('usuarios:perfil', pk=usuario.pk)  # Redirige a la página del perfil después de la actualización
+    else:
+        form = PerfilUsuarioForm(instance=request.user)
+    
+    if not request.user.is_staff:
+        return  redirect('usuarios:editar_foto_error')
+
+    return render(request, 'usuarios/update_profile_picture_users.html', {'form': form, 'usuarios':usuario})
+
+def editar_foto_error(request):
+    return render(request, 'usuarios/editar_foto_error.html')

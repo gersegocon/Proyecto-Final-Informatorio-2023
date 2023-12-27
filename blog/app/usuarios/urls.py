@@ -11,5 +11,7 @@ urlpatterns = [
      path('perfil/<int:pk>', views.Perfil, name='perfil'), #url para perfil de cualquier usuario
      path('mi-perfil/', views.MiPerfil, name='mi-perfil'), #url para perfil usuario propio
      path('usuarios/update-profile-picture/', views.actualizar_foto_perfil, name='update_profile_picture'),
+     path('usuarios/update-profile-picture_users/<int:pk>/', views.actualizar_foto_perfil_users, name='update_profile_picture_users'),
+     path('editar_foto_error', views.editar_foto_error, name='editar_foto_error'),
      
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

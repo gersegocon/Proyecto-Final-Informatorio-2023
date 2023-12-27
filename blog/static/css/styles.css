@@ -11543,6 +11543,7 @@ body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.com
   z-index:2;
   left:55%;
   top:25%;
+  
 }
 
 .circulo {
@@ -11559,27 +11560,53 @@ body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.com
 }
 
 @media screen and (max-width: 767px) {
-  .boton-cambio, .sin-foto {
+  .boton-cambio .sin-foto, .con-foto {
     top:29%;
     left:68%;
 
   }
 }
 
+body > div.container-fluid > div > div > div > div > form > div > p {
+  text-align: start;
+  margin-left:2%;
+  
+}
+
 body > div.container-fluid > div > div > div > div > form > div > p > label {
   display:none;
   
 }
-body > div.container-fluid > div > div > div > div > form > div > p > a {
-  color:white;
-  padding-bottom: 10%;
-}
+
 body > div.container-fluid > div > div > div > div > form > div > p > a:hover {
   color:#0085A1;
 }
 
+.archivo-container {
+  max-width: 90%  ;
+  overflow: hidden; /* Para ocultar cualquier contenido que sobresalga */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  font-family:'Work Sans', sans-serif ;
+  padding: 5%;
+  font-size: 20px; 
+  text-overflow: ellipsis;
+  
+
+}
+body > div.container-fluid > div > div > div > div > form > div > a {
+  color:white;
+  padding-bottom: 10%;
+  
+}
+
 @media screen and (max-width: 767px) {
-  body > div.container-fluid > div > div > div > div > form > div > p > label, ody > div.container-fluid > div > div > div > div > form > div > p > a, #id_imagen {
+  body > div.container-fluid > div > div > div > div > form > div > p > label {
     font-size: 12px;
   }
+
+  .archivo-container {
+  font-size: 11px;
+  }
+
+
 }

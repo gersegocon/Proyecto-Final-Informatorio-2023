@@ -15,14 +15,37 @@
                         <div class="site-heading2"  style="background-color: rgb(0, 0, 0, 0.8)">
                             <br>
                             
-                            <div class="perfil-imagen" style="display: inline-block;">
-                                
+                            <div class="boton-y-foto">
+                                <div class="perfil-imagen" style="display: inline-block; position: relative;">
                                 {% if usuarios.imagen %}
                                     <img class="imagenperfilusuarios" src="{{ usuarios.imagen.url }}" alt="Imagen de perfil de {{ usuarios.username }}">
                                 {% else %}
                                     <img class="imagenperfilusuarios" src="{% static 'assets/img/default-user.png' %}" alt="Imagen de perfil predeterminada">
                                 {% endif %}
+                                    
+                                </div>
+                                {% if user.is_staff %}
+                                    <div class="boton-cambio">
+                                        
+                                        {% if usuarios.imagen %}
+                                        <div class="con-foto">
+                                            <a href="{% url 'usuarios:update_profile_picture_users' pk=usuarios.id %}" class="change-picture-btn" title="Cambiar foto de perfil" style="font-size: 14px;">
+                                            <strong class="circulo">📷</strong>
+                                                
+                                            </a>
+                                        </div>
+                                        {% else %}
+                                        <div class="sin-foto">
+                                            <a href="{% url 'usuarios:update_profile_picture_users' pk=usuarios.id %}" class="change-picture-btn" title="Subir una foto de perfil">
+                                            <strong class="circulo">+</strong> 
+                                            </a>    
+                                        </div> 
+                                            
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
                             </div>
+                            
                             <br>
                             {% if usuarios.is_staff %}
                             

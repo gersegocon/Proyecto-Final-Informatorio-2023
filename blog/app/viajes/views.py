@@ -3,12 +3,14 @@ from .models import Viaje, Categoria, Comentario
 from django.urls import reverse
 from .forms import ViajeForm, CategoriaForm, ComentarioForm
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseForbidden
 from app.usuarios.models import Favorito
-from django.http import HttpResponseForbidden
 from django.contrib import messages
 
-# Create your views here.  
+
+
+
+
 
 
 def ListarViajes(request):

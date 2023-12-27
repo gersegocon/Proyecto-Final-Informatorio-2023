@@ -1,20 +1,16 @@
 {% extends 'usuarios/registro.html' %}
 {% load static %}
 {% block title %}
-    <title>{{user.username}}: Editar foto de perfil</title>
+    <title>Editar foto de perfil de {{usuarios.username}}</title>
 {% endblock title %}  
 
-
-{% block cuadrado-negro %}
-    <div class="site-heading1"  style="background-color: rgb(0, 0, 0, 0.8)">
-{% endblock cuadrado-negro %}
 {% block login %}
-    {% if user.imagen %}
-        <h1 style="display: inline-block; word-wrap: break-word;">Edita tu foto de perfil</h1>
+    {% if usuarios.imagen %}
+        <h1 style="display: inline-block; word-wrap: break-word;">Editar foto de perfil de {{usuarios.username}}</h1>
     {% else %}
-        <h1 style="display: inline-block; word-wrap: break-word;">Subí tu primera foto de perfil</h1>
+        <h1 style="display: inline-block; word-wrap: break-word;">Subí la primera foto de perfil de {{usuarios.username}}</h1>
     {% endif %}
-    <span class="subheading">Elegí la foto que más te identifique</span>
+    <span class="subheading">Elegí la foto que te parezca adecuada</span>
     
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
