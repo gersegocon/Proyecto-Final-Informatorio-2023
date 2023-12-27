@@ -10806,8 +10806,19 @@ body.body-login .site-heading1 {
       font-size: 15px;
       margin-left:0; /* Tamaño de fuente para pantallas pequeñas */
       background-color: #fff;
+
   }
+  body.body-login .site-heading > .subheading {
+    font-size: 30px;
+  }
+
+  body > div.container-fluid > div > div > div > div > form > div > div > input[type=text]:nth-child(1), body > div.container-fluid > div > div > div > div > form > div > div > input[type=text]:nth-child(2) {
+    background-color: #fff;
+  }
+
 }
+
+
 
   body > div.container-fluid > div > div > div > div > form > p > label {
       margin-right: 5px;
