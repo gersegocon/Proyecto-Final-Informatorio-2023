@@ -10,6 +10,7 @@ class ViajeForm(forms.ModelForm):
             'resumen',
             'contenido',
             'imagenes',
+            'descripcion_imagen',
             'categoria_viaje',
         ]
         

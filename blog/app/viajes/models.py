@@ -15,6 +15,7 @@ class Viaje(models.Model):
     contenido = models.TextField('Texto')
     imagenes = models.ImageField('Imágenes',upload_to='viajes')
     categoria_viaje = models.ForeignKey(Categoria, on_delete= models.SET_NULL, null=True)
+    descripcion_imagen = models.CharField('Descripción imagen', max_length=100, null=True)
     
     def default_autor():
         return Usuario.objects.get(is_superuser=True).pk

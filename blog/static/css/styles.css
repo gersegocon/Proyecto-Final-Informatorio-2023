@@ -11001,10 +11001,9 @@ body > div > div > div > div.detalles-viaje > p {
 
 }
 body > div > div > div > div.detalles-viaje > img {
-  float:right;
-  width: 50%;
+  max-width: 100%;
+  height: auto;
   
-  margin-left:5%;
   
 }
 
@@ -11522,3 +11521,5 @@ body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.com
   display: flex;
   flex-direction: column;
 }
+
+
