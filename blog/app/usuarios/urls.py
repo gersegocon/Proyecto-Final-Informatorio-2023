@@ -13,5 +13,5 @@ urlpatterns = [
      path('usuarios/update-profile-picture/', views.actualizar_foto_perfil, name='update_profile_picture'),
      path('usuarios/update-profile-picture_users/<int:pk>/', views.actualizar_foto_perfil_users, name='update_profile_picture_users'),
      path('editar_foto_error', views.editar_foto_error, name='editar_foto_error'),
-     
+     path('usuarios/eliminar-foto/<int:pk>/', views.eliminar_foto_perfil, name='eliminar_foto_perfil'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

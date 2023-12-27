@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.files.storage import default_storage
 
   
 
@@ -11,6 +12,13 @@ class Usuario(AbstractUser):
         return Favorito.objects.filter(usuario=self)
   #imagen de perfil de usuario
     imagen = models.ImageField('Imágenes', upload_to='usuarios')
+
+    def eliminar_imagen_perfil(self):
+        # Eliminar la imagen de perfil del almacenamiento
+        if self.imagen:
+            default_storage.delete(self.imagen.name)
+            self.imagen = None
+            self.save()
 
     # USUARIOS QUE TENEMOS EN NUESTRO BLOG Y SUS PERMISOS
     USUARIO_COLABORADOR = 'Colaborador'

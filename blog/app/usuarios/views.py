@@ -7,6 +7,7 @@ from .forms import RegistroForm, PerfilUsuarioForm
 from django.urls import reverse_lazy
 from .models import Usuario
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseBadRequest
 
 # Create your views here.
 
@@ -78,3 +79,18 @@ def actualizar_foto_perfil_users(request, pk):
 
 def editar_foto_error(request):
     return render(request, 'usuarios/editar_foto_error.html')
+
+@login_required
+def eliminar_foto_perfil(request, pk):
+    # Obtén el usuario
+    usuario = Usuario.objects.get(pk=pk)
+
+    # Verifica que el usuario tenga permisos para eliminar la foto
+    if not request.user.is_staff:
+        if request.user != usuario:
+            return  redirect('usuarios:editar_foto_error')
+
+    # Llama al método para eliminar la imagen de perfil
+    usuario.eliminar_imagen_perfil()
+
+    return redirect('usuarios:perfil', pk=usuario.pk)
