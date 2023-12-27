@@ -8,8 +8,8 @@ class RegistroForm(UserCreationForm):
     first_name = forms.CharField(label='Nombre', required=True, widget=forms.TextInput(attrs={'placeholder': 'Ingrese su nombre'}))
     last_name = forms.CharField(label='Apellido', required=True, widget=forms.TextInput(attrs={'placeholder': 'Ingrese su apellido'}))
     username = forms.CharField(label='Nombre de usuario', required=True, widget=forms.TextInput(attrs={'placeholder': 'Ingrese username'}))
-    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput, required=True)
-    password2 = forms.CharField(label='Confirmar Contraseña', widget=forms.PasswordInput, required=True)
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput(attrs={'placeholder': 'Ingrese contraseña'}), required=True)
+    password2 = forms.CharField(label='Confirmar Contraseña', widget=forms.PasswordInput(attrs={'placeholder': 'Confirme contraseña'}), required=True)
     imagen = forms.ImageField(label='Imagen de perfil', required=False)
 
     class Meta:

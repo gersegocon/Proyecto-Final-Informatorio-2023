@@ -4,11 +4,13 @@
     <title>¡Viajazos! - REGISTRATE</title>
 {% endblock title %}  
  
-
+                        {% block cuadrado-negro %}
+                            <div class="site-heading1"  style="background-color: rgb(0, 0, 0, 0.8)">
+                        {% endblock cuadrado-negro %}
                            {% block login %}
                             <h1 style="white-space: nowrap; display: inline-block;">Registrarse</h1>
                             <span class="subheading">Para usar la plataforma debe Registrarse</span>
-                            <br>
+                            
                             
                                 <form class="formulario-registro" method="post" enctype="multipart/form-data">
                                     {% csrf_token %}

@@ -6,13 +6,15 @@
 {% endblock title %}
 
 {% block contenido %}
-    <body class="body-login" style="background-image: url('{% static 'assets/img/inicio-sesion.png' %}'); background-color:rgba(255, 255, 255, 0.5); background-blend-mode: overlay; ">
+    <body class="body-login" style="background-image: url('https://i.ibb.co/SnGVYfG/inicio-sesion1-MConverter-eu.webp'); background-color:rgba(255, 255, 255, 0.5); background-blend-mode: overlay; ">
         <div class="container-fluid">
             <!-- Contenido de la página -->
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
+                        {% block cuadrado-negro %}
                         <div class="site-heading"  style="background-color: rgb(0, 0, 0, 0.8)">
+                        {% endblock cuadrado-negro %}
                             <br>
                             {% block login %}
                             <h1 style="white-space: nowrap; display: inline-block;">¡Logueate!</h1>

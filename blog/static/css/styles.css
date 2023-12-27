@@ -635,6 +635,7 @@ progress {
 
 .container,
 .container-fluid,
+.container-fluid1,
 .container-xxl,
 .container-xl,
 .container-lg,
@@ -674,6 +675,7 @@ progress {
     max-width: 1320px;
   }
 }
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -3692,6 +3694,7 @@ textarea.form-control-lg {
 }
 .navbar > .container,
 .navbar > .container-fluid,
+.navbar > .container-fluid1,
 .navbar > .container-sm,
 .navbar > .container-md,
 .navbar > .container-lg,
@@ -10760,27 +10763,56 @@ header.masthead:before {
 }
 header.masthead .page-heading,
 header.masthead .post-heading,
-header.masthead .site-heading, body.body-login .site-heading {
+header.masthead .site-heading, header.masthead .site-heading1, body.body-login .site-heading, body.body-login .site-heading1, header.masthead .site-heading2, body.body-login .site-heading2 {
   color: #fff;
   
 }
 header.masthead .page-heading,
-header.masthead .site-heading, body.body-login .site-heading {
+header.masthead .site-heading, header.masthead .site-heading1, body.body-login .site-heading, body.body-login .site-heading1, header.masthead .site-heading2, body.body-login .site-heading2 {
   text-align: center;
 }
 
-body.body-login .site-heading {
+body.body-login .site-heading, body.body-login .site-heading2 {
   width: auto; 
   border-radius: 50px;
   
 }
+
+body.body-login .site-heading1 {
+  width: 110%;
+  border-radius: 50px;
+}
+.site-heading2 {
+  
+  padding: 20px; /* Ajusta el relleno según sea necesario */
+  border-radius: 10px; /* Ajusta el radio de borde según sea necesario */
+  text-align: center;
+  max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .site-heading2 {
+      max-width: 105%; /* Ajusta el ancho máximo para pantallas pequeñas */
+      text-align: start;
+      padding: 7px; /* Ajusta el relleno para pantallas pequeñas */
+  }
+}
+  
+  body > div.container-fluid > div > div > div > div > form > p > label {
+      margin-right: 5px;
+  }
+
+
 header.masthead .page-heading h1, header.masthead .page-heading .h1,
 header.masthead .site-heading h1,
-header.masthead .site-heading .h1 {
+header.masthead .site-heading .h1, header.masthead .site-heading1 h1,
+header.masthead .site-heading1 .h1, header.masthead .site-heading2 h1,
+header.masthead .site-heading2 .h1 {
   font-size: 3rem;
 }
 header.masthead .page-heading .subheading,
-header.masthead .site-heading .subheading, body.body-login .site-heading .subheading {
+header.masthead .site-heading .subheading, body.body-login .site-heading .subheading, header.masthead .site-heading1 .subheading, body.body-login .site-heading1 .subheading, header.masthead .site-heading2 .subheading, body.body-login .site-heading2 .subheading {
   font-size: 1.5rem;
   color:white;
   font-weight: 300;
@@ -10821,7 +10853,9 @@ header.masthead .post-heading .meta {
   
   header.masthead .page-heading h1, header.masthead .page-heading .h1,
   header.masthead .site-heading h1,
-  header.masthead .site-heading .h1 {
+  header.masthead .site-heading .h1, header.masthead .site-heading1 h1,
+  header.masthead .site-heading1 .h1, header.masthead .site-heading2 h1,
+  header.masthead .site-heading2 .h1 {
     font-size: 5rem;
   }
   header.masthead .post-heading h1, header.masthead .post-heading .h1 {
@@ -10991,7 +11025,7 @@ body > div > div > div > div > div > form > div {
   
   }
 
-  body.body-login .container-fluid .site-heading .subheading {
+  body.body-login .container-fluid .site-heading .subheading, body.body-login .container-fluid .site-heading1 .subheading, body.body-login .container-fluid1 .site-heading2 .subheading {
     font-size: 1.5rem;
     color:white;
     font-weight: 600;
@@ -11003,7 +11037,7 @@ body > div > div > div > div > div > form > div {
 
   body > footer.footer-login {
     padding: 0;
-    align-items:;
+
   }
 
  .footer-login > div > div > div > div {
@@ -11015,28 +11049,56 @@ body > div > div > div > div > div > form > div {
 
   
   
-  body > div.container-fluid > div > div > div > div > form > p:nth-child(2), body > div.container-fluid > div > div > div > div > form > p:nth-child(3), body > div.container-fluid > div > div > div > div > form > p:nth-child(4), body > div.container-fluid > div > div > div > div > form > p:nth-child(5), body > div.container-fluid > div > div > div > div > form > p:nth-child(6), body > div.container-fluid > div > div > div > div > form > p:nth-child(7) {
-    padding: 5px 50px 5px 0px;
-    font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    text-align: end;
-  }
   
-    #id_first_name, #id_last_name, #id_username, #id_email, #id_password1, #id_password2 {
-    padding: 5px 0 5px 5px;
-    font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    margin-right: 10%;
-    
-  }
+body > div.container-fluid > div > div > div > div > form > p {
+  padding: 5px 0;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-align: end;
+  margin-right: 20%;
+}
+body > div.container-fluid > div > div > div > div > form > p:nth-child(8) {
+  text-align: start;
+  margin-left:16%;
+}
 
+
+#id_first_name,
+#id_last_name,
+#id_username,
+#id_email,
+#id_password1,
+#id_password2 {
+  padding: 5px;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+}
+
+
+body > div.container-fluid > div > div > div > div > form > p > label {
+  margin-right: 10px;
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 767px) {
+  /* Ajustes para pantallas pequeñas */
+  body > div.container-fluid > div > div > div > div > form > p,
+  #id_first_name,
+  #id_last_name,
+  #id_username,
+  #id_email,
+  #id_password1,
+  #id_password2 {
+      padding: 4px;
+      font-size: 13px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+      margin-right:15px;
+
+  }
   body > div.container-fluid > div > div > div > div > form > p:nth-child(8) {
-    padding: 5px 50px 5px 0px;
-    font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    
+    text-align: start;
+    margin-left:15%;
   }
+}
 
-  body > div.container-fluid > div > div > div > div > form > p:nth-child(2) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(3) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(4) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(5) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(6) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(7) > label, body > div.container-fluid > div > div > div > div > form > p:nth-child(8) > label {
-    margin-right: 10px;
-  }
 
   .boton-borrar, .boton-editar {
     color:black;
@@ -11183,6 +11245,30 @@ body > div.container.px-4.px-lg-5 > div > div > header > div > div > div > div {
   
 }
 
+@media screen and (max-width: 767px) {
+  /* Ajustes para pantallas pequeñas */
+  body.body-login .site-heading2 {
+      width: 120%; /* O el ancho deseado para pantallas pequeñas */
+      font-size: 15px;
+      margin-left:0; /* Tamaño de fuente para pantallas pequeñas */
+  }
+
+  .miperfil-nameuser,
+  .miperfil-nombre-apellido,
+  .miperfil-email,
+  .miperfil-fecha-registro,
+  .miperfil-ultimo-inicio {
+      margin-left: 5%; /* Ajusta el margen izquierdo según sea necesario para pantallas pequeñas */
+  }
+
+  #miperfil-nombre-apellido,
+  #miperfil-nameuser,
+  #miperfil-email,
+  #miperfil-fecha-registro,
+  #miperfil-ultimo-inicio {
+      margin-left: 2%; /* Ajusta el margen izquierdo según sea necesario para pantallas pequeñas */
+  }
+}
 
 /* PARA FORMULARIO CONTACTO */
 .contact-section {
