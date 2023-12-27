@@ -10812,7 +10812,7 @@ body.body-login .site-heading1 {
     font-size: 30px;
   }
 
-  body > div.container-fluid > div > div > div > div > form > div > div > input[type=text]:nth-child(1), body > div.container-fluid > div > div > div > div > form > div > div > input[type=text]:nth-child(2) {
+  body > div.container-fluid > div > div > div > div > form > div > div > input[type=text]:nth-child(1), body > div.container-fluid > div > div > div > div > form > div > div > input[type=password]:nth-child(3) {
     background-color: #fff;
   }
 
@@ -11091,6 +11091,7 @@ body > div.container-fluid > div > div > div > div > form > p:nth-child(8) {
 #id_password2 {
   padding: 5px;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #fff;
   
 }
 
