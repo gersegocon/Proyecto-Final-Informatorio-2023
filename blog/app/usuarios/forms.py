@@ -23,3 +23,8 @@ class RegistroForm(UserCreationForm):
             'password2',
             'imagen',
         ]
+
+class PerfilUsuarioForm(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['imagen']

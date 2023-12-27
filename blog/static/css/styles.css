@@ -11502,6 +11502,7 @@ body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.com
   border-radius: 50%; /* Hace que el contenedor sea circular */
   
   
+  
 }
 
 /* Estilo de la imagen */
@@ -11511,6 +11512,7 @@ body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.com
   display: block; /* Eliminar espacio adicional debajo de la imagen */
   object-fit: cover;
   border-radius: 50%; /* Hace que la imagen sea circular */
+  
 }
 
 .nombres-logos-git {
@@ -11522,4 +11524,62 @@ body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.com
   flex-direction: column;
 }
 
+.boton-y-foto {
+  margin:0;
+  padding: 0;
+}
 
+.miperfil-imagen, .imagenperfil, .boton-cambio .sin-foto, .con-foto {
+  position: absolute;
+  
+  
+}
+
+.miperfil-imagen, .imagenperfil {
+  z-index:1;
+}
+
+.sin-foto, .con-foto {
+  z-index:2;
+  left:55%;
+  top:25%;
+}
+
+.circulo {
+  display: inline-block;
+  width: 40px; /* Ajusta el tamaño del círculo según sea necesario */
+  height: 40px; /* Ajusta el tamaño del círculo según sea necesario */
+  background-color: #0085A1; /* Color verde para el fondo del círculo */
+  border-radius: 50%; /* Crea el efecto de círculo */
+  color: white; /* Color blanco para el símbolo + */
+  font-size: 25px; /* Ajusta el tamaño del símbolo según sea necesario */
+  text-align: center;
+  line-height: 40px; /* Centra verticalmente el símbolo dentro del círculo */
+  text-decoration: none; /* Elimina la decoración de texto predeterminada en el enlace */
+}
+
+@media screen and (max-width: 767px) {
+  .boton-cambio, .sin-foto {
+    top:29%;
+    left:68%;
+
+  }
+}
+
+body > div.container-fluid > div > div > div > div > form > div > p > label {
+  display:none;
+  
+}
+body > div.container-fluid > div > div > div > div > form > div > p > a {
+  color:white;
+  padding-bottom: 10%;
+}
+body > div.container-fluid > div > div > div > div > form > div > p > a:hover {
+  color:#0085A1;
+}
+
+@media screen and (max-width: 767px) {
+  body > div.container-fluid > div > div > div > div > form > div > p > label, ody > div.container-fluid > div > div > div > div > form > div > p > a, #id_imagen {
+    font-size: 12px;
+  }
+}

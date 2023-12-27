@@ -3,9 +3,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.generic import CreateView
-from .forms import RegistroForm
+from .forms import RegistroForm, PerfilUsuarioForm
 from django.urls import reverse_lazy
 from .models import Usuario
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -44,3 +45,15 @@ class Registro(CreateView):
     form_class = RegistroForm
     success_url = reverse_lazy('usuarios:login')
     template_name = 'usuarios/registro.html'
+
+@login_required
+def actualizar_foto_perfil(request):
+    if request.method == 'POST':
+        form = PerfilUsuarioForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('usuarios:mi-perfil')  # Redirige a la página de perfil después de la actualización
+    else:
+        form = PerfilUsuarioForm(instance=request.user)
+
+    return render(request, 'usuarios/update_profile_picture.html', {'form': form})
