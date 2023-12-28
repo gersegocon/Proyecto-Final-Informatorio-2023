@@ -1,3 +1,8 @@
+Integrantes:
+*Segovia Contrera, Germán*
+*Iturri, Luciano*
+*Toloza, Marcos*
+
 Pasos para correr proyecto:
 - En carpeta deseada: *git clone https://github.com/gersegocon/Proyecto-Final-Informatorio-2023*
 - Crear entorno virtual: *python -m venv "EntornoVirtual"*
