@@ -11179,6 +11179,7 @@ body > div.container-fluid > div > div > div > div > form > p > label {
   font-family:"Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+
 body > div.container-fluid > div > div > div > div > form > div > p:nth-child(1) > label {
   margin-left: 6%;
 }
@@ -11568,16 +11569,7 @@ body > div.container.px-4.px-lg-5 > div > div > div.comentarios > form > div.com
   }
 }
 
-body > div.container-fluid > div > div > div > div > form > div > p {
-  text-align: start;
-  margin-left:2%;
-  
-}
 
-body > div.container-fluid > div > div > div > div > form > div > p > label {
-  display:none;
-  
-}
 
 body > div.container-fluid > div > div > div > div > form > div > p > a:hover {
   color:#0085A1;
