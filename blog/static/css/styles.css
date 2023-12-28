@@ -7491,8 +7491,8 @@ textarea.form-control-lg {
 }
 
 .px-4 {
-  padding-right: 1.5rem !important;
-  padding-left: 1.5rem !important;
+  padding-right: 2.7rem !important;
+  
 }
 
 .px-5 {
@@ -11623,4 +11623,9 @@ body > div.container-fluid > div > div > div > div > form > div > a {
 .change-picture-btn, .eliminar-foto-btn {
   color:black;
   font-family:'Work Sans', sans-serif ;
+}
+
+.fa-linkedin-in {
+  font-size: 20px;
+
 }
