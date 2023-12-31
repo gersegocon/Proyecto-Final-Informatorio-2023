@@ -4,7 +4,7 @@ Integrantes:
 - *Toloza, Marcos*
 
 Dirección página web:
--_https://viajazos.pythonanywhere.com/_
+_https://viajazos.pythonanywhere.com/_
 
 
 Pasos para correr proyecto:
