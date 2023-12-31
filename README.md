@@ -3,6 +3,10 @@ Integrantes:
 - *Iturri, Luciano*
 - *Toloza, Marcos*
 
+Dirección página web:
+-_https://viajazos.pythonanywhere.com/_
+
+
 Pasos para correr proyecto:
 - En carpeta deseada: *git clone https://github.com/gersegocon/Proyecto-Final-Informatorio-2023*
 - Crear entorno virtual: *python -m venv "EntornoVirtual"*
